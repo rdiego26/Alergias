@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    <TextView 
+		android:text="@string/lbl_nome_categoria"
+		style="@style/textFont"
+	/>
+    
+   <EditText 
+       android:id="@+cad_categoria/txt_nome_categoria"
+       android:inputType="textCapWords"
+       style="@style/inputStyle"
+       />
+  
+	<Button 
+       android:text="Cadastrar"
+       android:id="@+cad_categoria/btn_cadastrar"
+       style="@style/botao"
+       />
+    
+    
+</LinearLayout>

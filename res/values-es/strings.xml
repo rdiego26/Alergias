@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Alergias</string>
+    <string name="saudacao">Bienvenido a las alergias manager!</string>
+    <string name="descricao">Con él usted puede organizar sus alergias y tenerlos siempre a mano y organizado fácilmente! \nIdeal para las citas médicas.</string>
+
+    <string name="funcionalidades_versao">\n\nLas características de esta versión:\n
+		* Registro de Alergia \n
+		* Categoría de inscripción \n
+	</string>
+   <string name="dicas">\n\n\n* Pulse el botón de menú para las opciones.</string>  
+
+   
+   
+	<!--  Dados do Autor [INICIO]-->  
+    <string name="site_autor">http://www.diegoramos.info/</string>
+    <string name="email_autor">rdiego26@gmail.com</string>	
+	<!-- Dados do Autor [FIM]-->   
+   
+      <!--  Cadastro de Alergia [INICIO]-->
+    <string name="lbl_nome_cadastro_alergia">Alergia: *</string>
+	<string name="lbl_nome_cadastro_obs">Obs: </string>
+	<string name="lbl_btn_cadastro">Registrar</string>
+		<!-- Cadastro de Alergia [FIM]-->
+   
+    <!--  Cadastro de Categoria [INICIO]-->
+   	<string name="lbl_nome_categoria">Categoría: *</string>
+    <!--  Cadastro de Categoria [FIM]-->   
+      
+	<!--  Menu da tela principal [INICIO]-->      
+	<string name="lbl_menu_lstcategoria">Categorías</string>
+	<string name="lbl_menunome_lstalergia">Las alergias</string>
+	<!--  Menu da tela principal [FIM]-->
+      
+   <!--  Menu da tela Listar Alergias e Categoria [INICIO] -->
+   <string name="lbl_menu_cad_cadastrar">Registrar</string>
+   <string name="lbl_cabecalho_lst_alergia">Lista de los alérgicos</string>   
+   <string name="lbl_cabecalho_lst_categoria">Lista de Categorías</string>
+   <string name="lbl_cabecalho_lst_vazia_alergia">No alergias registrados! \nUse el botón de menú para las opciones!</string>
+   <string name="lbl_cabecalho_lst_vazia_categoria">No hay una categoría registrada! \nUse el botón de menú para las opciones!</string>      
+   <!--  Menu da tela Listar Alergias e Categoria [FIM] -->
+
+   <!--  Menu da tela Detalhes Alergias e Categoria [INICIO] -->
+   <string name="lbl_menu_alterar">Cambiar</string>	
+   <string name="lbl_menu_voltar">Volver</string>
+   <string name="lbl_menu_excluir">Borrar</string>
+   <!--  Menu da tela Detalhes Alergias e Categoria [FIM] -->   
+   
+   <!--  ERROS E SUCESSO [INICIO]-->
+   <string name="lbl_erro_duplicidade_alergia">Alergia ya existe!</string>
+   <string name="lbl_erro_duplicidade_categoria">Categoría ya existe!</string>
+   
+   <string name="lbl_sucesso_cadastro_alergia">Alergia registrados!</string>
+   <string name="lbl_falha_cadastro_alergia">Trate de escribir!</string>   
+   <string name="lbl_sucesso_cadastro_categoria">Categoría registrados!</string>
+   <string name="lbl_falha_cadastro_categoria">Trate de escribir!</string> 
+   
+   <string name="lbl_sucesso_alteracao_alergia">Alergia cambiado!</string>   
+   <string name="lbl_falha_alteracao_alergia">Tratar de cambiar!</string>   
+   <string name="lbl_sucesso_alteracao_categoria">Categoría cambiado!</string>   
+   <string name="lbl_falha_alteracao_categoria">Tratar de cambiar!</string>
+   
+   <string name="lbl_sucesso_exclusao_alergia">Alergia eliminado!</string>
+   <string name="lbl_falha_exclusao_alergia">El intento de eliminar!</string>   
+   <string name="lbl_sucesso_exclusao_categoria">Categoría eliminado!</string>
+   <string name="lbl_falha_exclusao_categoria">El intento de eliminar!</string>   
+   <!--  ERROS [FIM]-->
+   
+   <!-- Utils [INICIO] -->   
+   <string name="lbl_campo">Campo</string>
+   <string name="lbl_obrigatorio">se requiere</string>
+   <!-- Utils [FIM] -->
+    
+   <!-- Enviar Sugestão [INICIO] -->
+   <string name="lbl_sugestao">Sugerencias</string>
+   <string name="lbl_btn_sugestao">Enviar un Consejo</string>
+   <!-- Enviar Sugestão [FIM] -->      
+    
+</resources>

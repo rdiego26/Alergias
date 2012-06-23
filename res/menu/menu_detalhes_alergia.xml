@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+menu_detalhes_alergia/alterar"
+        android:title="@string/lbl_menu_alterar"
+		android:icon="@drawable/disk_blue"
+        /> 
+
+    <item 
+        android:id="@+menu_detalhes_alergia/voltar"
+        android:title="@string/lbl_menu_voltar"
+		android:icon="@drawable/undo"
+        />     
+
+    <item 
+        android:id="@+menu_detalhes_alergia/excluir"
+        android:title="@string/lbl_menu_excluir"
+		android:icon="@drawable/delete2"
+        />     
+</menu>

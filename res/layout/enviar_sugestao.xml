@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+    <LinearLayout android:id="@+id/cabecalho"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+     	android:orientation="horizontal"
+    	android:padding="10dip">
+	    
+	    <TextView android:id="@+id/texto1"
+	        style="@style/cabecalho"
+	        android:text="@string/lbl_sugestao" />
+	</LinearLayout>    
+    
+    
+    
+
+	<LinearLayout xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" 
+	    android:id="@+id/rodape"
+		style="@style/rodape"
+	     >
+	    
+	    	 <!-- PROPAGANDA   -->   
+		<com.google.ads.AdView android:id="@+id/adView"
+	                 android:layout_width="fill_parent"
+	                 android:layout_height="wrap_content"
+	                 android:background="@android:color/transparent"
+	                 ads:adUnitId="a14f902a49ada86"
+	                 ads:adSize="BANNER"
+	                 ads:loadAdOnCreate="true"/>
+	</LinearLayout>
+
+	<ScrollView
+		android:id="@+id/ScrollView01"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:background="#E8E8E8"
+		style="@style/corpo"
+	    >
+		
+		    <LinearLayout 
+			    android:id="@+id/conteiner_corpo"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"	 
+			    android:orientation="vertical"       
+				style="@style/corpo"
+		        >
+
+		        <EditText
+		            android:id="@+enviar_sugestao/txtMensagemSugestao"
+		            android:layout_width="wrap_content"
+		            android:layout_height="fill_parent"
+		            android:gravity="center_horizontal"
+		            android:inputType="textMultiLine"
+		            android:lines="5"
+		            android:padding="3dp"
+		            android:width="150dp" />
+		    
+				<Button 
+				    android:id="@+enviar_sugestao/btn_enviarSugestao"
+			        android:layout_height="wrap_content"
+			        android:layout_width="wrap_content"
+			        android:text="@string/lbl_btn_sugestao"			    
+				    />
+	
+			</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>
