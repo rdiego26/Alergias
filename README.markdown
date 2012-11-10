@@ -1,6 +1,6 @@
 Alergias
 ======
-Moedas é uma app mobile para gerenciamento de alergias, tanto medicinais como gastronômicas, etc. Ideal para consultas médicas.
+Alergias é uma app mobile para gerenciamento de alergias, tanto medicinais como gastronômicas, etc. Ideal para consultas médicas.
 
 Licença
 -------
