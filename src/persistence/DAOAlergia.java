@@ -7,7 +7,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import entity.Alergia;
 
 public class DAOAlergia {
@@ -15,16 +14,16 @@ public class DAOAlergia {
 	//Nome dos Campos da Tabela
 	private static final String[] FIELD_ALERGIA = {"id_alergia", "nome", "obs", "id_categoria"};
 	protected SQLiteDatabase db;
-	private static DAOAlergia instance = new DAOAlergia(); // Padrão Singleton	
+	private static DAOAlergia instance = new DAOAlergia(); // Padrï¿½o Singleton	
 	
 	
 	
-	//Métodos
+	//Mï¿½todos
 	public static DAOAlergia getInstance(Context ctx)
 	{
 		if(instance.db == null || !instance.db.isOpen())
 		{
-			instance.db = new DAO(ctx).getWritableDatabase(); //Permite a comunicação com o banco
+			instance.db = new DAO(ctx).getWritableDatabase(); //Permite a comunicaï¿½ï¿½o com o banco
 		}
 		return instance;
 	}
@@ -82,7 +81,7 @@ public class DAOAlergia {
 		List<Alergia> lista = new ArrayList<Alergia>();
 		
 		Cursor c = db.query(DAO.TBL_ALERGIA, null, null, null, null, null, "nome ASC");
-		// null para colunas, trará todas!
+		// null para colunas, trarï¿½ todas!
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
@@ -116,7 +115,7 @@ public class DAOAlergia {
 		List<Alergia> lista = new ArrayList<Alergia>();
 		
 		Cursor c = db.query(DAO.TBL_ALERGIA, null, FIELD_ALERGIA[3] + " = " + id, null, null, null, null);
-		// null para colunas, trará todas!
+		// null para colunas, trarï¿½ todas!
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
