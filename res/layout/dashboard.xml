@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#6D7B8D">
+ 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="6dip" >
+ 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+ 
+            <Button
+                android:id="@+id/main_btn_category"
+                android:drawableTop="@drawable/categoria"
+                style="@style/DashBoardButton"
+                android:onClick="onButtonClicker"
+                android:text="@string/dashboard_txtCategoria" />
+ 
+            <Button
+                android:id="@+id/main_btn_allergie"
+                android:drawableTop="@drawable/pill_red"
+                style="@style/DashBoardButton"
+                android:onClick="onButtonClicker"
+                android:text="@string/dashboard_txtAlergia" />
+        </LinearLayout>
+ 
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+ 
+            <Button
+                android:id="@+id/main_btn_sugestion"
+                android:drawableTop="@drawable/lamp"
+                style="@style/DashBoardButton"
+                android:onClick="onButtonClicker"
+                android:text="@string/dashboard_txtSugestao" />
+            
+        </LinearLayout>        
+        
+ 
+    </LinearLayout>
+        	 <!-- PROPAGANDA   -->   
+	<com.google.ads.AdView android:id="@+id/adView"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@android:color/transparent"
+                 ads:adUnitId="@string/ADMOB_PUBLISHER_ID"
+                 ads:adSize="BANNER"
+                 ads:loadAdOnCreate="true"/>
+</LinearLayout>

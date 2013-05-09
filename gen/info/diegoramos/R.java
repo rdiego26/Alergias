@@ -64,12 +64,12 @@ containing a value of this type.
         public static final int txt_nome_categoria=0x7f080000;
     }
     public static final class detalhes_alergia {
-        public static final int sp_categoria=0x7f090000;
-        public static final int txtNomeAlergia=0x7f090001;
-        public static final int txtObsAlergia=0x7f090002;
+        public static final int sp_categoria=0x7f0a0000;
+        public static final int txtNomeAlergia=0x7f0a0001;
+        public static final int txtObsAlergia=0x7f0a0002;
     }
     public static final class detalhes_categoria {
-        public static final int txtNomeCategoria=0x7f0a0000;
+        public static final int txtNomeCategoria=0x7f0b0000;
     }
     public static final class drawable {
         public static final int add=0x7f020000;
@@ -91,26 +91,25 @@ containing a value of this type.
         public static final int txtMensagemSugestao=0x7f0c0000;
     }
     public static final class id {
-        public static final int ScrollView01=0x7f0b0004;
-        public static final int adView=0x7f0b0003;
-        public static final int cabecalho=0x7f0b0000;
-        public static final int conteiner_corpo=0x7f0b0005;
-        public static final int descricao_aplicativo=0x7f0b0006;
-        public static final int dicas=0x7f0b0008;
-        public static final int funcionalidades=0x7f0b0007;
-        public static final int rodape=0x7f0b0002;
-        public static final int texto1=0x7f0b0001;
+        public static final int ScrollView01=0x7f090007;
+        public static final int adView=0x7f090003;
+        public static final int cabecalho=0x7f090004;
+        public static final int conteiner_corpo=0x7f090008;
+        public static final int main_btn_allergie=0x7f090001;
+        public static final int main_btn_category=0x7f090000;
+        public static final int main_btn_sugestion=0x7f090002;
+        public static final int rodape=0x7f090006;
+        public static final int texto1=0x7f090005;
     }
     public static final class layout {
         public static final int cad_alergia=0x7f030000;
         public static final int cad_categoria=0x7f030001;
-        public static final int detalhes_alergia=0x7f030002;
-        public static final int detalhes_categoria=0x7f030003;
-        public static final int enviar_sugestao=0x7f030004;
-        public static final int listar_alergia=0x7f030005;
-        public static final int listar_categoria=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int principal=0x7f030008;
+        public static final int dashboard=0x7f030002;
+        public static final int detalhes_alergia=0x7f030003;
+        public static final int detalhes_categoria=0x7f030004;
+        public static final int enviar_sugestao=0x7f030005;
+        public static final int listar_alergia=0x7f030006;
+        public static final int listar_categoria=0x7f030007;
     }
     public static final class listar_alergia {
         public static final int lista=0x7f0d0000;
@@ -147,7 +146,19 @@ containing a value of this type.
         public static final int menu_sugestao=0x7f130002;
     }
     public static final class string {
+        /**  Enviar Sugestão [FIM] 
+         */
+        public static final int ADMOB_PUBLISHER_ID=0x7f050027;
         public static final int app_name=0x7f050000;
+        public static final int dashboard_txtAlergia=0x7f05002a;
+        public static final int dashboard_txtCategoria=0x7f050029;
+        /**  DASHBOARD 
+ Enviar Sugestão [FIM] 
+ DASHBOARD 
+ Enviar Sugestão [FIM] 
+ DASHBOARD 
+         */
+        public static final int dashboard_txtSugestao=0x7f050028;
         public static final int descricao=0x7f050002;
         public static final int dicas=0x7f050004;
         public static final int email_autor=0x7f050006;
@@ -248,6 +259,8 @@ containing a value of this type.
         public static final int site_autor=0x7f050005;
     }
     public static final class style {
+        public static final int DashBoardButton=0x7f04000b;
+        public static final int TitleText=0x7f04000a;
         public static final int basico=0x7f040005;
         public static final int botao=0x7f040004;
         public static final int cabecalho=0x7f040006;

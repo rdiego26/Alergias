@@ -76,5 +76,10 @@
    <string name="lbl_sugestao">Suggestions</string>
    <string name="lbl_btn_sugestao">Send a Tip</string>
    <!-- Enviar Sugestão [FIM] -->   
+   
+   <!-- DASHBOARD -->
+	<string name="dashboard_txtSugestao">Suggestions</string>
+	<string name="dashboard_txtCategoria">Categories</string>
+	<string name="dashboard_txtAlergia">Allergies</string>   
     
 </resources>

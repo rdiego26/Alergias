@@ -76,4 +76,12 @@
    <string name="lbl_sugestao">Sugestões</string>
    <string name="lbl_btn_sugestao">Enviar Sugestão</string>
    <!-- Enviar Sugestão [FIM] -->
+   
+   <string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>
+   
+   <!-- DASHBOARD -->
+	<string name="dashboard_txtSugestao">Sugestões</string>
+	<string name="dashboard_txtCategoria">Categorias</string>
+	<string name="dashboard_txtAlergia">Alergias</string>
+   
 </resources>

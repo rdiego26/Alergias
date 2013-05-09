@@ -75,6 +75,11 @@
    <!-- Enviar Sugestão [INICIO] -->
    <string name="lbl_sugestao">Sugerencias</string>
    <string name="lbl_btn_sugestao">Enviar un Consejo</string>
-   <!-- Enviar Sugestão [FIM] -->      
+   <!-- Enviar Sugestão [FIM] -->
+   
+            <!-- DASHBOARD -->
+	<string name="dashboard_txtSugestao">Sugerencias</string>
+	<string name="dashboard_txtCategoria">Categorías</string>
+	<string name="dashboard_txtAlergia">Alergias</string>
     
 </resources>

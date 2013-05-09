@@ -1,6 +1,5 @@
 package info.diegoramos;
 
-import info.diegoramos.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class CadastrarAlergia extends Activity
 		final Spinner spiCategoria = (Spinner) findViewById(R.cad_alergia.sp_categoria);
 		spiCategoria.setAdapter(dataAdapter);
 
-		//Tratamento do botão Cadastrar
+		//Tratamento do botï¿½o Cadastrar
 		Button btn = (Button) findViewById(R.cad_alergia.btn_cadastrar);
 		btn.setOnClickListener(new View.OnClickListener()
 		{
@@ -67,7 +66,7 @@ public class CadastrarAlergia extends Activity
 				A.setObs(edtObs.getText().toString());
 				A.setId_categoria(id_categoria_tela);
 				
-				//Validação dos campos
+				//Validaï¿½ï¿½o dos campos
 				validacoes validate = new validacoes();				
 				boolean aux1, aux2;
 				

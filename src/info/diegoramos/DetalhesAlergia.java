@@ -1,6 +1,5 @@
 package info.diegoramos;
 
-import info.diegoramos.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import persistence.DAOCategoria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +32,7 @@ public class DetalhesAlergia extends Activity{
 	//Componentes da tela
 	EditText edtNome, edtObs;
 	Spinner spiCategoria;
+	@SuppressWarnings("rawtypes")
 	ArrayAdapter myAdap;
 	
 	
@@ -75,7 +74,7 @@ public class DetalhesAlergia extends Activity{
 		final Spinner spiCategoria = (Spinner) findViewById(R.detalhes_alergia.sp_categoria);
 		spiCategoria.setAdapter(dataAdapter);
 
-	    //Pegando o parâmetro recebido pelo ListarAlergia
+	    //Pegando o parï¿½metro recebido pelo ListarAlergia
 		Bundle extras = getIntent().getExtras();
 		id_alergia = (String)extras.get("id_alergia");
 		
@@ -85,7 +84,7 @@ public class DetalhesAlergia extends Activity{
 		//Preenchendo os dados na tela
 		Integer id_categoria = 0;
 		
-		//Procurando a posição na lista que contem a id_categoria do objeto
+		//Procurando a posiï¿½ï¿½o na lista que contem a id_categoria do objeto
 		for(int i=0; i < lista_id_categoria.size();i++)
 		{
 			if(lista_id_categoria.get(i).equalsIgnoreCase(String.valueOf(A.getId_categoria())) )
@@ -106,9 +105,9 @@ public class DetalhesAlergia extends Activity{
 			edtNome.setText(A.getNome());
 			edtObs.setText(A.getObs());
 			
-			//Preenchendo o Spinner e setando o valor que está no banco
+			//Preenchendo o Spinner e setando o valor que estï¿½ no banco
 			spiCategoria.setAdapter(dataAdapter);
-			spiCategoria.setSelection(id_categoria); //Indice começa em 0
+			spiCategoria.setSelection(id_categoria); //Indice comeï¿½a em 0
 
 		}
 	}
