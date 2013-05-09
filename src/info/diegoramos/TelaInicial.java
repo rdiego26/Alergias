@@ -5,16 +5,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class TelaInicial extends Activity {
-    /** Called when the activity is first created. */
-    @Override
+
+	@Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
-        
     }
     
+    /**
+     * Tratamento dos botões na DashBoard
+     * @param vw
+     */
     public void onButtonClicker(View vw) {
        	//Verificando qual item do menu foi selecionado
     	switch (vw.getId())
@@ -36,4 +44,6 @@ public class TelaInicial extends Activity {
     	
     	
     }
+    
+    
 }

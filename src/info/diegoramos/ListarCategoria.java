@@ -1,32 +1,43 @@
 package info.diegoramos;
 
-import info.diegoramos.R;
+import info.diegoramos.alergias.Utils.ToastManager;
+import info.diegoramos.alergias.entity.Categoria;
+import info.diegoramos.alergias.persistence.DAOCategoria;
+
 import java.util.List;
 
-import persistence.DAOCategoria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import entity.Categoria;
 
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class ListarCategoria extends Activity
 {
 
 	DAOCategoria DAOC;
 	String conteudo[];
-	List<Categoria> lista;	
+	List<Categoria> lista;
+	private ListView listV;
+	private int posicao;
 
 	//Mensagens
 	String msg_lista_categoria_vazia;
+	String msgError = null;
+	String msgSucess = null;
 	
 
 	@Override
@@ -36,38 +47,54 @@ public class ListarCategoria extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listar_categoria);
 		
+		listV = (ListView) findViewById(R.listar_categoria.lista);
+		
+		//Simple tap in ListView item
+		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View wv, int position,
+					long id) {
+				Categoria c = (Categoria) lista.get(position);
+    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+    			Bundle param = new Bundle();
+    			
+    			param.putSerializable("_object_categoria", c);
+    			intent.putExtras(param);
+    			startActivity(intent);
+			}
+		});		
+		
 		DAOC = DAOCategoria.getInstance(this); // trabalhando com SINGLETON
-		//adidionarLista(getApplicationContext());
-		adidionarLista();
+		
+		registerForContextMenu(listV);
+		loadList();
 	}
 	
 	@Override
 	protected void onStart() {
-		// TODO Auto-generated method stub
 		super.onStart();
-		//adidionarLista(getApplicationContext());
-		adidionarLista();
+		loadList();
 	}
 	
 	@Override
 	protected void onResume()
 	{
 		super.onResume();
-		//adidionarLista(getApplicationContext());
-		adidionarLista();
+		loadList();
 	}
 	
 	@Override
 	protected void onRestart()
 	{
-		// TODO Auto-generated method stub
 		super.onRestart();
-		//adidionarLista(getApplicationContext());
-		adidionarLista();
+		loadList();
 	}
 	
-	//Recebe contexto para conseguir mostrar a mensagem de lista vazia com êxito
-	public void adidionarLista()
+	/**
+	 * Preenche a ListView
+	 */
+	public void loadList()
 	{
 		
 		ListView lv = (ListView) findViewById(R.listar_categoria.lista);
@@ -96,26 +123,6 @@ public class ListarCategoria extends Activity
 			Toast.makeText(getApplicationContext(), msg_lista_categoria_vazia, Toast.LENGTH_SHORT).show();
 
 		}
-		
-		//Tratando o clique normal no item da lista
-		lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
-		{
-			
-			public void onItemClick(AdapterView<?> parent, View v, int position,
-					long id)
-			{
-				
-				Categoria C = lista.get(position);
-
-				
-				Intent intencao = new Intent(v.getContext(), DetalhesCategoria.class);
-				Bundle param = new Bundle();
-				param.putString("id_categoria", C.getId_categoria().toString());
-				
-				intencao.putExtras(param);
-				startActivity(intencao);
-			}
-		});
 	
 	}	
 
@@ -150,7 +157,61 @@ public class ListarCategoria extends Activity
     			
     	}
     	
-    }	
+    }
+    
+    //ContextMenu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View vw, ContextMenuInfo menuInfo) {
+    	super.onCreateContextMenu(menu, vw, menuInfo);
+    	getMenuInflater().inflate(R.menu.context_menu, menu);
+    	
+    	/* Position selected on ContextMenu */
+    	AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+    	posicao = info.position;
+    	
+    }
+    
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+    	Categoria categoria;
+    	
+    	switch (item.getItemId()) {
+    	
+    	case R.id.context_menu_register:
+    			startActivity(new Intent(this, CadastrarCategoria.class));
+    		break;
+    	
+    	case R.id.context_menu_delete:
+    			categoria = (Categoria) lista.get(posicao);
+    			msgError = this.getString(R.string.lbl_falha_exclusao_categoria);
+    			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_categoria);
+    			
+    			if ( DAOC.delete(categoria.getId_categoria(), getApplicationContext()) == -1 ) {
+    				ToastManager.show(getApplicationContext(), msgError, 2);
+    			}
+    			else {
+    				ToastManager.show(getApplicationContext(), msgSucess, 0);
+    				loadList();
+    			}
+    			
+    			break;
+    	case R.id.context_menu_update:
+    			categoria = (Categoria) lista.get(posicao);
+    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+    			Bundle param = new Bundle();
+    			
+    			param.putSerializable("_object_categoria", categoria);
+    			intent.putExtras(param);
+    			startActivity(intent);    			
+    			
+    			break;
+    			
+    	default:
+				break;
+		}
+    	
+    	return true;
+    }    
 	
 	
 	

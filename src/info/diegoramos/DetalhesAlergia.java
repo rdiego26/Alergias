@@ -1,39 +1,32 @@
 package info.diegoramos;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import persistence.DAOAlergia;
-import persistence.DAOCategoria;
+import info.diegoramos.alergias.Utils.ToastManager;
+import info.diegoramos.alergias.Utils.validacoes;
+import info.diegoramos.alergias.componentes.CategoriaSpinnerAdapter;
+import info.diegoramos.alergias.entity.Alergia;
+import info.diegoramos.alergias.entity.Categoria;
+import info.diegoramos.alergias.persistence.DAOAlergia;
+import info.diegoramos.alergias.persistence.DAOCategoria;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
-import entity.Alergia;
 
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class DetalhesAlergia extends Activity{
 
-	DAOAlergia DAOA;
-	DAOCategoria DAOC;
-	Alergia A;
-	List<String> lista_nome_categoria = new ArrayList<String>();
-	List<String> lista_id_categoria = new ArrayList<String>();
-	
-	//Criadao para acelerar o delete, update
-	String id_alergia;
-	
+	DAOAlergia daoA;
+	DAOCategoria daoC;
+	Alergia a;
 	
 	//Componentes da tela
 	EditText edtNome, edtObs;
 	Spinner spiCategoria;
-	@SuppressWarnings("rawtypes")
-	ArrayAdapter myAdap;
 	
 	
 	//Mensagens
@@ -42,18 +35,12 @@ public class DetalhesAlergia extends Activity{
 	String msg_falha_gravacao;	
 	String msg_sucesso_alteracao;
 	String msg_falha_alteracao;
-	String msg_sucesso_exclusao;	
-	String msg_falha_exclusao;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detalhes_alergia);
-
-		//Singleton
-	    DAOA = DAOA.getInstance(this);
-	    DAOC = DAOC.getInstance(this);
 	    
 		//Setando Mensagens
 		msg_duplicidade_alergia = getString(R.string.lbl_erro_duplicidade_alergia);
@@ -61,141 +48,110 @@ public class DetalhesAlergia extends Activity{
 		msg_falha_gravacao = getString(R.string.lbl_falha_cadastro_alergia);	
 		msg_sucesso_alteracao = getString(R.string.lbl_sucesso_alteracao_alergia);
 		msg_falha_alteracao = getString(R.string.lbl_falha_alteracao_alergia);
-		msg_sucesso_exclusao = getString(R.string.lbl_sucesso_exclusao_alergia);	
-		msg_falha_exclusao = getString(R.string.lbl_falha_exclusao_alergia);
 	    
 	    
+		//Componentes
+		spiCategoria = (Spinner)findViewById(R.detalhes_alergia.sp_categoria);
+		edtNome = (EditText)findViewById(R.detalhes_alergia.txtNomeAlergia);
+		edtObs = (EditText)findViewById(R.detalhes_alergia.txtObsAlergia);
 	    
-		//Preenchendo o Spinner
-	    lista_nome_categoria = DAOC.findAllNome();
-	    lista_id_categoria = DAOC.findAllId();
-		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista_nome_categoria);
-		ArrayAdapter<String> spinnerArrayAdapter = dataAdapter;
-		final Spinner spiCategoria = (Spinner) findViewById(R.detalhes_alergia.sp_categoria);
-		spiCategoria.setAdapter(dataAdapter);
-
-	    //Pegando o par�metro recebido pelo ListarAlergia
+		loadCategoriaSpinner();
+		loadContent();
+		
+	}
+    
+    /**
+     * Responsável por obter um objeto Categoria serializado e setar os valores na tela
+     */    
+    private void loadContent() {
+		//obtain client via Extra
 		Bundle extras = getIntent().getExtras();
-		id_alergia = (String)extras.get("id_alergia");
+		a = (Alergia) extras.getSerializable("_object_alergia");
 		
-		//Faz a busca e preenche os dados na tela, e obtem os dados para preencher a lista de Tipos de Despesa
-		A = DAOA.buscar(new Integer(id_alergia));
-		
-		//Preenchendo os dados na tela
-		Integer id_categoria = 0;
-		
-		//Procurando a posi��o na lista que contem a id_categoria do objeto
-		for(int i=0; i < lista_id_categoria.size();i++)
-		{
-			if(lista_id_categoria.get(i).equalsIgnoreCase(String.valueOf(A.getId_categoria())) )
-			{
-				id_categoria = i;
-			}
-		}
-
-		
-		myAdap = (ArrayAdapter) spiCategoria.getAdapter(); 
-		
-		//Preenche os campos com os valores obtidos na consulta
-		if(A != null)
-		{
-			edtNome	     	= (EditText) findViewById(R.detalhes_alergia.txtNomeAlergia);
-			edtObs			= (EditText) findViewById(R.detalhes_alergia.txtObsAlergia);
+		if ( a != null) {
+			daoC = DAOCategoria.getInstance(this);
 			
-			edtNome.setText(A.getNome());
-			edtObs.setText(A.getObs());
-			
-			//Preenchendo o Spinner e setando o valor que est� no banco
-			spiCategoria.setAdapter(dataAdapter);
-			spiCategoria.setSelection(id_categoria); //Indice come�a em 0
-
-		}
+			setCategoriaSpinner( daoC.getById(a.getId_categoria()));
+			edtNome.setText(a.getNome());
+			edtObs.setText(a.getObs());
+		}     	
+    }
+    
+    /**
+     * Responsável por preencher o Spinner de Categoria
+     */
+    private void loadCategoriaSpinner() {
+    	spiCategoria.setAdapter(CategoriaSpinnerAdapter.getAdapter(this));
+    }
+    /**
+     * Recebe um objeto Categoria e seta este no Spinner Categoria
+     * @param Categoria
+     */
+    
+	private void setCategoriaSpinner(Categoria cat) {
+		for (int i = 0; i < spiCategoria.getCount(); i++) {  
+            if (spiCategoria.getItemAtPosition(i).toString()
+            		.replace("{nomeCategoria=", "").replace("}", "")
+            			.equals(cat.getNome())) {  
+            	spiCategoria.setSelection(i);  
+            }  
+        }  
 	}
 
-	protected void excluirAlergia(Alergia A)
-    {
+	/**
+	 * Responsável por obter o objeto selecionado no Spinner Categoria
+	 */
+	private Categoria getCategoriaSpinner() {
+		Categoria categoria = daoC.getByName( spiCategoria.getSelectedItem().toString().replace("{nomeCategoria=", "").replace("}", "") );
 		
-		if(DAOA.delete(A.getId_alergia()) == -1)
-    	{
-    		Toast.makeText(getApplicationContext(), msg_falha_exclusao, Toast.LENGTH_LONG).show();
-    	}
-    	else
-    	{
-    		Toast.makeText(getApplicationContext(), msg_sucesso_exclusao, Toast.LENGTH_LONG).show();
-    	}
-    }
+		return categoria;
+	}
 
-    
-    protected void alterarAlergia(Alergia A)
-    {
-		//Verifica duplicidade
-		if(DAOA.buscarNomeDuplicado(A) != null)
-		{
-			Toast.makeText(getApplicationContext(), msg_duplicidade_alergia, Toast.LENGTH_SHORT).show();
-		}
-		else
-		{
-	    	if(DAOA.update(A) == -1)
-	    	{
-	    		Toast.makeText(getApplicationContext(), msg_falha_alteracao, Toast.LENGTH_LONG).show();
-	    	}
-	    	else
-	    	{
-	    		Toast.makeText(getApplicationContext(), msg_sucesso_alteracao, Toast.LENGTH_LONG).show();
-	    	}
-		}
-    } 
-    
-    
-    //Colocando o menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	MenuInflater inflater = getMenuInflater();
-    	inflater.inflate(R.menu.menu_detalhes_alergia, menu);
-   	
-    	return true;
-    }
-	 
-    //Tratando item selecionado no menu
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-    	Intent intencao;
-		intencao = new Intent(this, ListarAlergia.class);
+	
+	/**
+    * Responsável por efetuar a atualização do objeto Alergia
+    * @param View ( ListarAlergia )
+    */    	
+	public void update(View vw) {
+		daoA = DAOAlergia.getInstance(this);
 		
-    	//Verificando qual item do menu foi selecionado
-    	switch (item.getItemId())
-    	{
-    		case R.menu_detalhes_alergia.excluir:
-    			excluirAlergia(A);
-    			startActivity(intencao);
-    			finish();
-    			return true;
-    	
-    		case R.menu_detalhes_alergia.alterar:
-    			//Seta o objeto com os dados da tela
-    			final Spinner spiCategoria = (Spinner) findViewById(R.detalhes_alergia.sp_categoria);
-    		    lista_nome_categoria = DAOC.findAllNome();
-    		    lista_id_categoria = DAOC.findAllId();
-    			Integer id_categoria_selecionada;
-    			
-    			id_categoria_selecionada = Integer.valueOf(lista_id_categoria.get(spiCategoria.getSelectedItemPosition()));
-    			
-    			A.setId_categoria(id_categoria_selecionada);
-    			A.setNome(edtNome.getText().toString());
-    			A.setObs(edtObs.getText().toString());
-    			alterarAlergia(A);
-    			finish();
-    			return true;
-    			
-    		case R.menu_detalhes_alergia.voltar:
-    			finish();
-    			return true;
-    			
-    		default:
-    			return false;
-    			
-    	}
-    	
-    }
+		a.setId_categoria( daoC.getByName(getCategoriaSpinner().getNome()).getId_categoria() );
+		a.setNome(edtNome.getText().toString());
+		a.setObs(edtObs.getText().toString());
+		
+		
+		validacoes validate = new validacoes();				
+		boolean aux1;
+		
+		aux1 = validate.isNull("Alergia ", a.getNome(), 1, getApplicationContext());		
+		
+		
+		String msg_duplicidade_alergia = getString(R.string.lbl_erro_duplicidade_alergia);
+		String msg_sucesso_gravacao = getString(R.string.lbl_sucesso_cadastro_alergia);
+		String msg_falha_gravacao = getString(R.string.lbl_falha_cadastro_alergia);
+		
+		if(aux1 != true)
+		{
+			//Verifica duplicidade
+			if(daoA.buscarNomeDuplicado(a) != null)
+			{
+				ToastManager.show(getApplicationContext(), msg_duplicidade_alergia, 1);
+			}
+			else
+			{
+				if(daoA.save(a) != -1) //Salva para o banco de dados o objeto povoado	
+				{
+					ToastManager.show(getApplicationContext(), msg_sucesso_gravacao, 0);
+					finish(); //sae da tela						
+				}
+				else
+				{
+					ToastManager.show(getApplicationContext(), msg_falha_gravacao, 1);
+				}
+			}
+		}		
+		
+		
+	}
+	
 }

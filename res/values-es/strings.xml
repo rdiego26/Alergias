@@ -2,27 +2,20 @@
 <resources>
 
     <string name="app_name">Alergias</string>
-    <string name="saudacao">Bienvenido a las alergias manager!</string>
-    <string name="descricao">Con él usted puede organizar sus alergias y tenerlos siempre a mano y organizado fácilmente! \nIdeal para las citas médicas.</string>
-
-    <string name="funcionalidades_versao">\n\nLas características de esta versión:\n
-		* Registro de Alergia \n
-		* Categoría de inscripción \n
-	</string>
-   <string name="dicas">\n\n\n* Pulse el botón de menú para las opciones.</string>  
-
-   
-   
 	<!--  Dados do Autor [INICIO]-->  
     <string name="site_autor">http://www.diegoramos.info/</string>
     <string name="email_autor">rdiego26@gmail.com</string>	
 	<!-- Dados do Autor [FIM]-->   
    
-      <!--  Cadastro de Alergia [INICIO]-->
+   <!-- Botões Padrões [INICIO] -->
+ 	<string name="lbl_btn_cadastro">Registrar</string>
+	<string name="lbl_btn_atualizar">Actualizar</string>  
+   <!-- Botões Padrões [FIM] -->
+   
+    <!--  Cadastro de Alergia [INICIO]-->
     <string name="lbl_nome_cadastro_alergia">Alergia: *</string>
 	<string name="lbl_nome_cadastro_obs">Obs: </string>
-	<string name="lbl_btn_cadastro">Registrar</string>
-		<!-- Cadastro de Alergia [FIM]-->
+	<!-- Cadastro de Alergia [FIM]-->
    
     <!--  Cadastro de Categoria [INICIO]-->
    	<string name="lbl_nome_categoria">Categoría: *</string>
@@ -77,9 +70,17 @@
    <string name="lbl_btn_sugestao">Enviar un Consejo</string>
    <!-- Enviar Sugestão [FIM] -->
    
+	<string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>	   
+   
             <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Sugerencias</string>
 	<string name="dashboard_txtCategoria">Categorías</string>
 	<string name="dashboard_txtAlergia">Alergias</string>
-    
+	
+	<!-- Context Menu messages -->
+	<string name="context_menu_update">Refresh</string>
+	<string name="context_menu_delete">Eliminar</string>
+	<string name="context_menu_register">Registro</string>	
+	
+	<string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>
 </resources>

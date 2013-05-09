@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:scrollbars="vertical" 
+    android:background="@drawable/linearlayout_background">
     
-    <ListView 
-        	android:id="@+listar_categoria/lista"
-        	android:layout_width="fill_parent"
-        	android:layout_height="fill_parent"
-        	android:layout_gravity="center_horizontal"
-        	android:scrollbars="vertical"
-        ></ListView>    
+    <RelativeLayout
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/custom_border">
+        
+	    <ListView 
+	        	android:id="@+listar_categoria/lista"
+	        	android:layout_width="fill_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_gravity="center_horizontal"
+	        	android:scrollbars="vertical"
+	        	android:divider="@drawable/listview_divider"
+	        ></ListView>    
 
+	</RelativeLayout>
 </LinearLayout>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
->
+    android:background="@drawable/linearlayout_background">
 
     <TextView 
         android:text="@string/lbl_nome_categoria"
@@ -45,4 +45,11 @@
         	android:inputType="text"
         />
 
+    <Button 
+        android:id="@+detalhes_alergia/btnAtualizar"
+		style="@style/botao"
+        android:text="@string/lbl_btn_atualizar"
+        android:onClick="update"
+        />    
+    
 </LinearLayout>

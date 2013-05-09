@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class EnviarSugestao extends Activity
 {
 	
@@ -24,6 +28,10 @@ public class EnviarSugestao extends Activity
         setContentView(R.layout.enviar_sugestao);
     }
 	
+	/**
+	 * Tratamento dos botoões na tela
+	 * @param vw(Tela)
+	 */
 	public void trataBotaoSugestao(View vw) {
 		String assunto = new String();
 		String destinatario;

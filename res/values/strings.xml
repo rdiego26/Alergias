@@ -2,27 +2,21 @@
 <resources>
 
     <string name="app_name">Alergias</string>
-    <string name="saudacao">Bem-vindo ao Gerenciador de alergias!</string>
-    <string name="descricao">Com ele voce poderá organizar suas alergias e tê-las sempre a mão de modo fácil e organizado! \nIdeal para consultas médicas.</string>
-
-    <string name="funcionalidades_versao">\n\nFuncionalidades desta versão:\n
-		* Cadastro de Alergia \n
-		* Cadastro de Categoria \n
-	</string>
-   <string name="dicas">\n\n\n* Pressione tecla de menu para as opções.</string>  
-
-   
    
 	<!--  Dados do Autor [INICIO]-->  
     <string name="site_autor">http://www.diegoramos.info/</string>
     <string name="email_autor">rdiego26@gmail.com</string>	
 	<!-- Dados do Autor [FIM]-->   
    
-      <!--  Cadastro de Alergia [INICIO]-->
+   <!-- Botões Padrões [INICIO] -->
+	<string name="lbl_btn_cadastro">Cadastrar</string>
+	<string name="lbl_btn_atualizar">Atualizar</string>   
+   <!-- Botões Padrões [FIM] -->
+	
+    <!--  Cadastro de Alergia [INICIO]-->
     <string name="lbl_nome_cadastro_alergia">Alergia: *</string>
 	<string name="lbl_nome_cadastro_obs">Obs: </string>
-	<string name="lbl_btn_cadastro">Cadastrar</string>
-		<!-- Cadastro de Alergia [FIM]-->
+	<!-- Cadastro de Alergia [FIM]-->
    
     <!--  Cadastro de Categoria [INICIO]-->
    	<string name="lbl_nome_categoria">Categoria: *</string>
@@ -83,5 +77,10 @@
 	<string name="dashboard_txtSugestao">Sugestões</string>
 	<string name="dashboard_txtCategoria">Categorias</string>
 	<string name="dashboard_txtAlergia">Alergias</string>
+	
+	<!-- Context Menu messages -->
+	<string name="context_menu_update">Atualizar</string>
+	<string name="context_menu_delete">Excluir</string>
+	<string name="context_menu_register">Cadastrar</string>	
    
 </resources>

@@ -64,11 +64,13 @@ containing a value of this type.
         public static final int txt_nome_categoria=0x7f080000;
     }
     public static final class detalhes_alergia {
+        public static final int btnAtualizar=0x7f0a0003;
         public static final int sp_categoria=0x7f0a0000;
         public static final int txtNomeAlergia=0x7f0a0001;
         public static final int txtObsAlergia=0x7f0a0002;
     }
     public static final class detalhes_categoria {
+        public static final int btnAtualizar=0x7f0b0001;
         public static final int txtNomeCategoria=0x7f0b0000;
     }
     public static final class drawable {
@@ -76,40 +78,59 @@ containing a value of this type.
         public static final int ambulance=0x7f020001;
         public static final int bottle_of_pills=0x7f020002;
         public static final int categoria=0x7f020003;
-        public static final int delete2=0x7f020004;
-        public static final int disk_blue=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int information=0x7f020007;
-        public static final int lamp=0x7f020008;
-        public static final int medical_pot_pills=0x7f020009;
-        public static final int pill_red=0x7f02000a;
-        public static final int undo=0x7f02000b;
-        public static final int wall=0x7f02000c;
+        public static final int custom_border=0x7f020004;
+        public static final int custom_button=0x7f020005;
+        public static final int delete2=0x7f020006;
+        public static final int disk_blue=0x7f020007;
+        public static final int error=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int information=0x7f02000a;
+        public static final int lamp=0x7f02000b;
+        public static final int linearlayout_background=0x7f02000c;
+        public static final int listview_divider=0x7f02000d;
+        public static final int medical_pot_pills=0x7f02000e;
+        public static final int pill_red=0x7f02000f;
+        public static final int radial_gradient=0x7f020010;
+        public static final int toast_background_blue=0x7f020011;
+        public static final int toast_background_red=0x7f020012;
+        public static final int toast_background_yellow=0x7f020013;
+        public static final int undo=0x7f020014;
+        public static final int wall=0x7f020015;
+        public static final int warning=0x7f020016;
     }
     public static final class enviar_sugestao {
         public static final int btn_enviarSugestao=0x7f0c0001;
         public static final int txtMensagemSugestao=0x7f0c0000;
     }
     public static final class id {
-        public static final int ScrollView01=0x7f090007;
-        public static final int adView=0x7f090003;
-        public static final int cabecalho=0x7f090004;
-        public static final int conteiner_corpo=0x7f090008;
-        public static final int main_btn_allergie=0x7f090001;
-        public static final int main_btn_category=0x7f090000;
-        public static final int main_btn_sugestion=0x7f090002;
-        public static final int rodape=0x7f090006;
-        public static final int texto1=0x7f090005;
+        public static final int ScrollView01=0x7f090009;
+        public static final int SpinnerCategoriaItem_name=0x7f090001;
+        public static final int adView=0x7f090005;
+        public static final int cabecalho=0x7f090006;
+        public static final int categoria_spinner_tableRow1=0x7f090000;
+        public static final int conteiner_corpo=0x7f09000a;
+        public static final int context_menu_delete=0x7f09000f;
+        public static final int context_menu_register=0x7f09000d;
+        public static final int context_menu_update=0x7f09000e;
+        public static final int llRoot=0x7f09000b;
+        public static final int main_btn_allergie=0x7f090003;
+        public static final int main_btn_category=0x7f090002;
+        public static final int main_btn_sugestion=0x7f090004;
+        public static final int rodape=0x7f090008;
+        public static final int texto1=0x7f090007;
+        public static final int tvTexto=0x7f09000c;
     }
     public static final class layout {
         public static final int cad_alergia=0x7f030000;
         public static final int cad_categoria=0x7f030001;
-        public static final int dashboard=0x7f030002;
-        public static final int detalhes_alergia=0x7f030003;
-        public static final int detalhes_categoria=0x7f030004;
-        public static final int enviar_sugestao=0x7f030005;
-        public static final int listar_alergia=0x7f030006;
-        public static final int listar_categoria=0x7f030007;
+        public static final int categoria_spinner_item=0x7f030002;
+        public static final int dashboard=0x7f030003;
+        public static final int detalhes_alergia=0x7f030004;
+        public static final int detalhes_categoria=0x7f030005;
+        public static final int enviar_sugestao=0x7f030006;
+        public static final int listar_alergia=0x7f030007;
+        public static final int listar_categoria=0x7f030008;
+        public static final int toast_layout=0x7f030009;
     }
     public static final class listar_alergia {
         public static final int lista=0x7f0d0000;
@@ -118,11 +139,11 @@ containing a value of this type.
         public static final int lista=0x7f0e0000;
     }
     public static final class menu {
-        public static final int menu_detalhes_alergia=0x7f060000;
-        public static final int menu_detalhes_categoria=0x7f060001;
-        public static final int menu_listar_alergia=0x7f060002;
-        public static final int menu_listar_categoria=0x7f060003;
-        public static final int menu_principal=0x7f060004;
+        public static final int context_menu=0x7f060000;
+        public static final int menu_detalhes_alergia=0x7f060001;
+        public static final int menu_detalhes_categoria=0x7f060002;
+        public static final int menu_listar_alergia=0x7f060003;
+        public static final int menu_listar_categoria=0x7f060004;
     }
     public static final class menu_detalhes_alergia {
         public static final int alterar=0x7f0f0000;
@@ -140,35 +161,42 @@ containing a value of this type.
     public static final class menu_listar_categoria {
         public static final int cadastrar=0x7f120000;
     }
-    public static final class menu_principal {
-        public static final int menu_alergia=0x7f130001;
-        public static final int menu_categoria=0x7f130000;
-        public static final int menu_sugestao=0x7f130002;
-    }
     public static final class string {
         /**  Enviar Sugestão [FIM] 
          */
-        public static final int ADMOB_PUBLISHER_ID=0x7f050027;
+        public static final int ADMOB_PUBLISHER_ID=0x7f050024;
         public static final int app_name=0x7f050000;
-        public static final int dashboard_txtAlergia=0x7f05002a;
-        public static final int dashboard_txtCategoria=0x7f050029;
+        public static final int context_menu_delete=0x7f050029;
+        public static final int context_menu_register=0x7f05002a;
+        /**  Context Menu messages 
+ Context Menu messages 
+ Context Menu messages 
+         */
+        public static final int context_menu_update=0x7f050028;
+        public static final int dashboard_txtAlergia=0x7f050027;
+        public static final int dashboard_txtCategoria=0x7f050026;
         /**  DASHBOARD 
  Enviar Sugestão [FIM] 
  DASHBOARD 
  Enviar Sugestão [FIM] 
  DASHBOARD 
          */
-        public static final int dashboard_txtSugestao=0x7f050028;
-        public static final int descricao=0x7f050002;
-        public static final int dicas=0x7f050004;
-        public static final int email_autor=0x7f050006;
-        public static final int funcionalidades_versao=0x7f050003;
-        public static final int lbl_btn_cadastro=0x7f050009;
-        public static final int lbl_btn_sugestao=0x7f050026;
-        public static final int lbl_cabecalho_lst_alergia=0x7f05000e;
-        public static final int lbl_cabecalho_lst_categoria=0x7f05000f;
-        public static final int lbl_cabecalho_lst_vazia_alergia=0x7f050010;
-        public static final int lbl_cabecalho_lst_vazia_categoria=0x7f050011;
+        public static final int dashboard_txtSugestao=0x7f050025;
+        public static final int email_autor=0x7f050002;
+        public static final int lbl_btn_atualizar=0x7f050004;
+        /**  Dados do Autor [FIM]
+ Botões Padrões [INICIO] 
+ Dados do Autor [FIM]
+ Botões Padrões [INICIO] 
+ Dados do Autor [FIM]
+ Botões Padrões [INICIO] 
+         */
+        public static final int lbl_btn_cadastro=0x7f050003;
+        public static final int lbl_btn_sugestao=0x7f050023;
+        public static final int lbl_cabecalho_lst_alergia=0x7f05000b;
+        public static final int lbl_cabecalho_lst_categoria=0x7f05000c;
+        public static final int lbl_cabecalho_lst_vazia_alergia=0x7f05000d;
+        public static final int lbl_cabecalho_lst_vazia_categoria=0x7f05000e;
         /**   ERROS [FIM]
  Utils [INICIO] 
   ERROS [FIM]
@@ -176,7 +204,7 @@ containing a value of this type.
   ERROS [FIM]
  Utils [INICIO] 
          */
-        public static final int lbl_campo=0x7f050023;
+        public static final int lbl_campo=0x7f050020;
         /**   Menu da tela Detalhes Alergias e Categoria [FIM] 
   ERROS E SUCESSO [INICIO]
   Menu da tela Detalhes Alergias e Categoria [FIM] 
@@ -184,14 +212,14 @@ containing a value of this type.
   Menu da tela Detalhes Alergias e Categoria [FIM] 
   ERROS E SUCESSO [INICIO]
          */
-        public static final int lbl_erro_duplicidade_alergia=0x7f050015;
-        public static final int lbl_erro_duplicidade_categoria=0x7f050016;
-        public static final int lbl_falha_alteracao_alergia=0x7f05001c;
-        public static final int lbl_falha_alteracao_categoria=0x7f05001e;
-        public static final int lbl_falha_cadastro_alergia=0x7f050018;
-        public static final int lbl_falha_cadastro_categoria=0x7f05001a;
-        public static final int lbl_falha_exclusao_alergia=0x7f050020;
-        public static final int lbl_falha_exclusao_categoria=0x7f050022;
+        public static final int lbl_erro_duplicidade_alergia=0x7f050012;
+        public static final int lbl_erro_duplicidade_categoria=0x7f050013;
+        public static final int lbl_falha_alteracao_alergia=0x7f050019;
+        public static final int lbl_falha_alteracao_categoria=0x7f05001b;
+        public static final int lbl_falha_cadastro_alergia=0x7f050015;
+        public static final int lbl_falha_cadastro_categoria=0x7f050017;
+        public static final int lbl_falha_exclusao_alergia=0x7f05001d;
+        public static final int lbl_falha_exclusao_categoria=0x7f05001f;
         /**   Menu da tela Listar Alergias e Categoria [FIM] 
   Menu da tela Detalhes Alergias e Categoria [INICIO] 
   Menu da tela Listar Alergias [FIM] 
@@ -199,7 +227,7 @@ containing a value of this type.
   Menu da tela Listar Alergias e Categoria [FIM] 
   Menu da tela Detalhes Alergias e Categoria [INICIO] 
          */
-        public static final int lbl_menu_alterar=0x7f050012;
+        public static final int lbl_menu_alterar=0x7f05000f;
         /**   Menu da tela principal [FIM]
   Menu da tela Listar Alergias e Categoria [INICIO] 
   Menu da tela principal [FIM]
@@ -207,8 +235,8 @@ containing a value of this type.
   Menu da tela principal [FIM]
   Menu da tela Listar Alergias e Categoria [INICIO] 
          */
-        public static final int lbl_menu_cad_cadastrar=0x7f05000d;
-        public static final int lbl_menu_excluir=0x7f050014;
+        public static final int lbl_menu_cad_cadastrar=0x7f05000a;
+        public static final int lbl_menu_excluir=0x7f050011;
         /**   Cadastro de Categoria [FIM]
   Menu da tela principal [INICIO]
   Cadastro de Categoria [FIM]
@@ -216,18 +244,18 @@ containing a value of this type.
   Cadastro de Categoria [FIM]
   Menu da tela principal [INICIO]
          */
-        public static final int lbl_menu_lstcategoria=0x7f05000b;
-        public static final int lbl_menu_voltar=0x7f050013;
-        public static final int lbl_menunome_lstalergia=0x7f05000c;
-        /**  Dados do Autor [FIM]
+        public static final int lbl_menu_lstcategoria=0x7f050008;
+        public static final int lbl_menu_voltar=0x7f050010;
+        public static final int lbl_menunome_lstalergia=0x7f050009;
+        /**  Botões Padrões [FIM] 
   Cadastro de Alergia [INICIO]
- Dados do Autor [FIM]
+ Botões Padrões [FIM] 
   Cadastro de Alergia [INICIO]
- Dados do Autor [FIM]
+ Botões Padrões [FIM] 
   Cadastro de Alergia [INICIO]
          */
-        public static final int lbl_nome_cadastro_alergia=0x7f050007;
-        public static final int lbl_nome_cadastro_obs=0x7f050008;
+        public static final int lbl_nome_cadastro_alergia=0x7f050005;
+        public static final int lbl_nome_cadastro_obs=0x7f050006;
         /**  Cadastro de Alergia [FIM]
   Cadastro de Categoria [INICIO]
  Cadastro de Alergia [FIM]
@@ -235,14 +263,14 @@ containing a value of this type.
  Cadastro de Alergia [FIM]
   Cadastro de Categoria [INICIO]
          */
-        public static final int lbl_nome_categoria=0x7f05000a;
-        public static final int lbl_obrigatorio=0x7f050024;
-        public static final int lbl_sucesso_alteracao_alergia=0x7f05001b;
-        public static final int lbl_sucesso_alteracao_categoria=0x7f05001d;
-        public static final int lbl_sucesso_cadastro_alergia=0x7f050017;
-        public static final int lbl_sucesso_cadastro_categoria=0x7f050019;
-        public static final int lbl_sucesso_exclusao_alergia=0x7f05001f;
-        public static final int lbl_sucesso_exclusao_categoria=0x7f050021;
+        public static final int lbl_nome_categoria=0x7f050007;
+        public static final int lbl_obrigatorio=0x7f050021;
+        public static final int lbl_sucesso_alteracao_alergia=0x7f050018;
+        public static final int lbl_sucesso_alteracao_categoria=0x7f05001a;
+        public static final int lbl_sucesso_cadastro_alergia=0x7f050014;
+        public static final int lbl_sucesso_cadastro_categoria=0x7f050016;
+        public static final int lbl_sucesso_exclusao_alergia=0x7f05001c;
+        public static final int lbl_sucesso_exclusao_categoria=0x7f05001e;
         /**  Utils [FIM] 
  Enviar Sugestão [INICIO] 
  Utils [FIM] 
@@ -250,13 +278,12 @@ containing a value of this type.
  Utils [FIM] 
  Enviar Sugestão [INICIO] 
          */
-        public static final int lbl_sugestao=0x7f050025;
-        public static final int saudacao=0x7f050001;
+        public static final int lbl_sugestao=0x7f050022;
         /**   Dados do Autor [INICIO]
   Dados do Autor [INICIO]
   Dados do Autor [INICIO]
          */
-        public static final int site_autor=0x7f050005;
+        public static final int site_autor=0x7f050001;
     }
     public static final class style {
         public static final int DashBoardButton=0x7f04000b;

@@ -1,16 +1,20 @@
 package info.diegoramos;
 
-import persistence.DAOCategoria;
-import Utils.validacoes;
+import info.diegoramos.alergias.Utils.ToastManager;
+import info.diegoramos.alergias.Utils.validacoes;
+import info.diegoramos.alergias.entity.Categoria;
+import info.diegoramos.alergias.persistence.DAOCategoria;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import entity.Categoria;
-import info.diegoramos.R;
 
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class CadastrarCategoria extends Activity
 {
 
@@ -28,7 +32,7 @@ public class CadastrarCategoria extends Activity
 		//Trabalhando com Singleton
 		DAOC = DAOCategoria.getInstance(this);
 
-		//Tratamento do botão Cadastrar
+		//Tratamento do botï¿½o Cadastrar
 		Button btn = (Button) findViewById(R.cad_categoria.btn_cadastrar);
 		btn.setOnClickListener(new View.OnClickListener()
 		{
@@ -41,7 +45,7 @@ public class CadastrarCategoria extends Activity
 			
 				C.setNome(edtNome.getText().toString());
 				
-				//Validação dos campos
+				//Validaï¿½ï¿½o dos campos
 				validacoes validate = new validacoes();				
 				boolean aux1;
 				
@@ -57,20 +61,18 @@ public class CadastrarCategoria extends Activity
 					//Verifica duplicidade
 					if(DAOC.buscarNome(C) != null)
 					{
-						Toast.makeText(getApplicationContext(), msg_duplicidade_categoria, Toast.LENGTH_SHORT).show();
+						ToastManager.show(getApplicationContext(), msg_duplicidade_categoria, 2);
 					}
 					else
 					{
 						if(DAOC.save(C) != -1) //Salva para o banco de dados o objeto povoado	
 						{
-							//Exibindo mensagem de sucesso
-							Toast.makeText(getApplicationContext(), msg_sucesso_gravacao, Toast.LENGTH_SHORT).show();
+							ToastManager.show(getApplicationContext(), msg_sucesso_gravacao, 0);
 							finish(); //sae da tela						
 						}
 						else
 						{
-							//Exibindo mensagem de falha
-							Toast.makeText(getApplicationContext(), msg_falha_gravacao, Toast.LENGTH_SHORT).show();							
+							ToastManager.show(getApplicationContext(), msg_falha_gravacao, 1);
 						}
 					}
 				}

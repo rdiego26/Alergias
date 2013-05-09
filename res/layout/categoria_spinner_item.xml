@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+   
+    <TableRow
+		android:id="@+id/categoria_spinner_tableRow1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		>
+		
+        <TextView android:textSize="22sp"
+			android:text="@string/lbl_cabecalho_lst_categoria"
+			android:textStyle="bold"
+			android:layout_width="fill_parent"
+			android:id="@+id/SpinnerCategoriaItem_name"
+			android:layout_height="fill_parent"
+			android:paddingLeft="5sp" />
+        
+    </TableRow>
+     
+</TableLayout>

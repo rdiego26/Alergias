@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/linearlayout_background" 
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    >
     
 
     <LinearLayout android:id="@+id/cabecalho"
         android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
      	android:orientation="horizontal"
-    	android:padding="10dip">
+    	android:padding="10dip"
+    	android:background="@android:color/transparent">
 	    
 	    <TextView android:id="@+id/texto1"
 	        style="@style/cabecalho"
@@ -18,7 +24,7 @@
     
     
 
-	<LinearLayout xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads" 
+	<LinearLayout  
 	    android:id="@+id/rodape"
 		style="@style/rodape"
 	     >
@@ -37,9 +43,8 @@
 		android:id="@+id/ScrollView01"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-		android:background="#E8E8E8"
 		style="@style/corpo"
-	    >
+		android:background="@android:color/transparent">
 		
 		    <LinearLayout 
 			    android:id="@+id/conteiner_corpo"
@@ -47,23 +52,30 @@
 			    android:layout_height="wrap_content"	 
 			    android:orientation="vertical"       
 				style="@style/corpo"
-		        >
+				android:layout_gravity="center_horizontal"
+				>
 
-		        <EditText
+		        <info.diegoramos.alergias.componentes.LineEditText
 		            android:id="@+enviar_sugestao/txtMensagemSugestao"
 		            android:layout_width="wrap_content"
 		            android:layout_height="fill_parent"
-		            android:gravity="center_horizontal"
+		            android:layout_gravity="left"
+		            android:gravity="start"
+		            android:ems="10"
+		            android:lines="10"
+		            android:width="350sp"
 		            android:inputType="textMultiLine"
-		            android:lines="5"
-		            android:padding="3dp"
-		            android:width="150dp" />
+		            />
 		    
 				<Button 
 				    android:id="@+enviar_sugestao/btn_enviarSugestao"
 			        android:layout_height="wrap_content"
 			        android:layout_width="wrap_content"
-			        android:text="@string/lbl_btn_sugestao"			    
+			        android:text="@string/lbl_btn_sugestao"		
+        	        android:clickable="true"
+        			android:onClick="trataBotaoSugestao"
+        			android:layout_gravity="right"
+        			style="@style/botao"	    
 				    />
 	
 			</LinearLayout>

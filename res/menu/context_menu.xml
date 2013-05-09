@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+id/context_menu_register"
+        android:title="@string/context_menu_register"
+        android:icon="@drawable/add"
+        />
+
+    <item 
+        android:id="@+id/context_menu_update"
+        android:title="@string/context_menu_update"
+        android:icon="@drawable/disk_blue"
+        />    
+
+    <item 
+        android:id="@+id/context_menu_delete"
+        android:title="@string/context_menu_delete"
+        android:icon="@drawable/delete2"
+        />    
+    
+</menu>

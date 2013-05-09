@@ -1,11 +1,14 @@
 package info.diegoramos;
 
+import info.diegoramos.alergias.Utils.ToastManager;
+import info.diegoramos.alergias.Utils.validacoes;
+import info.diegoramos.alergias.entity.Alergia;
+import info.diegoramos.alergias.persistence.DAOAlergia;
+import info.diegoramos.alergias.persistence.DAOCategoria;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import persistence.DAOAlergia;
-import persistence.DAOCategoria;
-import Utils.validacoes;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +16,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
-import entity.Alergia;
 
+/**
+ * 
+ * @author Diego Ramos <rdiego26@gmail>
+ *
+ */
 public class CadastrarAlergia extends Activity
 {
 
@@ -44,7 +50,7 @@ public class CadastrarAlergia extends Activity
 		lista_id_categoria = DAOC.findAllId();
 		
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista_nome_categoria);
-		ArrayAdapter<String> spinnerArrayAdapter = dataAdapter;
+		//ArrayAdapter<String> spinnerArrayAdapter = dataAdapter;
 		
 		final Spinner spiCategoria = (Spinner) findViewById(R.cad_alergia.sp_categoria);
 		spiCategoria.setAdapter(dataAdapter);
@@ -68,10 +74,9 @@ public class CadastrarAlergia extends Activity
 				
 				//Valida��o dos campos
 				validacoes validate = new validacoes();				
-				boolean aux1, aux2;
+				boolean aux1;
 				
 				aux1 = validate.isNull("Alergia ", A.getNome(), 1, getApplicationContext());
-				aux2 = validate.isNull("Categoria ", A.getId_categoria(), 1, getApplicationContext());
 				
 				//Mensagens de erro/sucesso
 				String msg_duplicidade_alergia = getString(R.string.lbl_erro_duplicidade_alergia);
@@ -82,20 +87,18 @@ public class CadastrarAlergia extends Activity
 					//Verifica duplicidade
 					if(DAOA.buscarNome(A) != null)
 					{
-						Toast.makeText(getApplicationContext(), msg_duplicidade_alergia, Toast.LENGTH_SHORT).show();
+						ToastManager.show(getApplicationContext(), msg_duplicidade_alergia, 1);
 					}
 					else
 					{
 						if(DAOA.save(A) != -1) //Salva para o banco de dados o objeto povoado	
 						{
-							//Exibindo mensagem de sucesso
-							Toast.makeText(getApplicationContext(), msg_sucesso_gravacao, Toast.LENGTH_SHORT).show();
+							ToastManager.show(getApplicationContext(), msg_sucesso_gravacao, 0);
 							finish(); //sae da tela						
 						}
 						else
 						{
-							//Exibindo mensagem de falha
-							Toast.makeText(getApplicationContext(), msg_falha_gravacao, Toast.LENGTH_SHORT).show();							
+							ToastManager.show(getApplicationContext(), msg_falha_gravacao, 1);
 						}
 					}
 				}

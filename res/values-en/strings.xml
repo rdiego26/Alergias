@@ -2,27 +2,21 @@
 <resources>
 
     <string name="app_name">Allergies</string>
-    <string name="saudacao">Welcome to Manager allergies!</string>
-    <string name="descricao">With it you can organize your allergies and have them always at hand and easily organized! \nIdeal for medical appointments.</string>
-
-    <string name="funcionalidades_versao">\n\nFeatures of this release:\n
-		* Register of Allergy \n
-		* Register of Category \n
-	</string>
-   <string name="dicas">\n\n\n* Press the menu button for options.</string>  
-
-   
    
 	<!--  Dados do Autor [INICIO]-->  
     <string name="site_autor">http://www.diegoramos.info/</string>
     <string name="email_autor">rdiego26@gmail.com</string>	
 	<!-- Dados do Autor [FIM]-->   
    
+   <!-- Botões Padrões [INICIO] -->
+	<string name="lbl_btn_cadastro">Register</string>
+	<string name="lbl_btn_atualizar">Update</string>   
+   <!-- Botões Padrões [FIM] -->   
+   
     <!--  Cadastro de Alergia [INICIO]-->
     <string name="lbl_nome_cadastro_alergia">Allergie: *</string>
 	<string name="lbl_nome_cadastro_obs">Note: </string>
-	<string name="lbl_btn_cadastro">Register</string>
-		<!-- Cadastro de Alergia [FIM]-->
+	<!-- Cadastro de Alergia [FIM]-->
    
    <!--  Cadastro de Categoria [INICIO]-->
    <string name="lbl_nome_categoria">Category: *</string>
@@ -77,9 +71,18 @@
    <string name="lbl_btn_sugestao">Send a Tip</string>
    <!-- Enviar Sugestão [FIM] -->   
    
+	<string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>	   
+   
    <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Suggestions</string>
 	<string name="dashboard_txtCategoria">Categories</string>
-	<string name="dashboard_txtAlergia">Allergies</string>   
+	<string name="dashboard_txtAlergia">Allergies</string>
+	
+	<!-- Context Menu messages -->
+	<string name="context_menu_update">Update</string>
+	<string name="context_menu_delete">Delete</string>
+	<string name="context_menu_register">Register</string>
+	
+
     
 </resources>
