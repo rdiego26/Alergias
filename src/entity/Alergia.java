@@ -1,7 +1,13 @@
 package entity;
 
-public class Alergia {
+import java.io.Serializable;
 
+public class Alergia implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id_alergia;
 	private String nome;
 	private String Obs;
