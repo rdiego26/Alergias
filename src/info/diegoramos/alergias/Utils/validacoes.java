@@ -1,6 +1,6 @@
 package info.diegoramos.alergias.Utils;
 
-import info.diegoramos.R;
+import info.diegoramos.alergias.R;
 import android.content.Context;
 import android.widget.Toast;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.diegoramos"
+    package="info.diegoramos.alergias"
     android:versionCode="7"
     android:versionName="1.6"
      >
@@ -14,7 +14,7 @@
         android:icon="@drawable/bottle_of_pills"
         android:label="@string/app_name" >
         <activity
-            android:name="info.diegoramos.TelaInicial"
+            android:name="info.diegoramos.alergias.TelaInicial"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
             <intent-filter>
@@ -25,16 +25,13 @@
         </activity>
         
         <!-- TEMA -->
-        <activity android:name="info.diegoramos.Tema" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
-        <activity android:name="info.diegoramos.CadastrarAlergia"></activity>
-        <activity android:name="info.diegoramos.ListarAlergia"></activity>
-        <activity android:name="info.diegoramos.DetalhesAlergia"></activity>
-        <activity android:name="info.diegoramos.CadastrarCategoria"></activity>
-        <activity android:name="info.diegoramos.ListarCategoria"></activity>
-        <activity android:name="info.diegoramos.DetalhesCategoria"></activity>
-        <activity android:name="info.diegoramos.EnviarSugestao"></activity>
-        <!--  <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation"/> -->
-		
+        <activity android:name="info.diegoramos.alergias.CadastrarAlergia"></activity>
+        <activity android:name="info.diegoramos.alergias.ListarAlergia"></activity>
+        <activity android:name="info.diegoramos.alergias.DetalhesAlergia"></activity>
+        <activity android:name="info.diegoramos.alergias.CadastrarCategoria"></activity>
+        <activity android:name="info.diegoramos.alergias.ListarCategoria"></activity>
+        <activity android:name="info.diegoramos.alergias.DetalhesCategoria"></activity>
+        <activity android:name="info.diegoramos.alergias.EnviarSugestao"></activity>
 		
 		<!-- ADMOB -->
 		<activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />

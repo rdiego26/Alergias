@@ -81,6 +81,4 @@
 	<string name="context_menu_update">Refresh</string>
 	<string name="context_menu_delete">Eliminar</string>
 	<string name="context_menu_register">Registro</string>	
-	
-	<string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>
 </resources>

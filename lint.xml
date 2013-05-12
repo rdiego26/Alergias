@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="InvalidPackage">
+        <ignore path="libs/guice-3.0-no_aop.jar" />
+    </issue>
+</lint>
