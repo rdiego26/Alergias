@@ -140,7 +140,7 @@ public class DetalhesAlergia extends Activity{
 			}
 			else
 			{
-				if(daoA.save(a) != -1) //Salva para o banco de dados o objeto povoado	
+				if(daoA.update(a) != -1) //Salva para o banco de dados o objeto povoado	
 				{
 					ToastManager.show(getApplicationContext(), msg_sucesso_gravacao, 0);
 					finish(); //sae da tela						
