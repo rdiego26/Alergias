@@ -20,4 +20,4 @@ O Alergias é densenvolvido para Android 2.2 e utiliza banco de dados Sqlite.
 Screenshot
 ----------
 
-![Tela Principal](https://lh6.ggpht.com/ImX9qY3EOiQfIncFFHt3CKws7kKAjFaivxVvPwj29dCFeZObqPQv3mdo_23rTtZdTQ)
+![Tela Principal](http://www.diegoramos.info/dashBoard[pt-br].png)
