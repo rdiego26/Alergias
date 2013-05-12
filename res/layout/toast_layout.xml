@@ -12,8 +12,10 @@
      android:layout_height="wrap_content"  
      android:drawableLeft="@drawable/ic_launcher"  
      android:drawablePadding="2dp"  
-     android:gravity="center_vertical"  
+     android:gravity="center_vertical"
      android:text="@null"  
-     android:textAppearance="?android:attr/textAppearanceMedium" />  
+     android:textAppearance="?android:attr/textAppearanceMedium" 
+     android:textColor="#4A4344"
+     />  
    
  </LinearLayout>  
