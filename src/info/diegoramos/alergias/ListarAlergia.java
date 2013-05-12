@@ -121,7 +121,7 @@ public class ListarAlergia extends Activity
 		}
 		else
 		{
-			conteudo = "".split("");
+			conteudo = sb.toString().split("<>");
 			ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
 			lv.setAdapter(addAlergia);
 			ToastManager.show(getApplicationContext(), msg_lista_alergia_vazia, 0);

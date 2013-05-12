@@ -17,7 +17,7 @@
        />
   
 	<Button 
-       android:text="Cadastrar"
+       android:text="@string/lbl_btn_cadastro"
        android:id="@+cad_categoria/btn_cadastrar"
        style="@style/botao"
        />
