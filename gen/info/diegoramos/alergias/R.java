@@ -98,10 +98,6 @@ containing a value of this type.
         public static final int wall=0x7f020015;
         public static final int warning=0x7f020016;
     }
-    public static final class enviar_sugestao {
-        public static final int btn_enviarSugestao=0x7f0c0001;
-        public static final int txtMensagemSugestao=0x7f0c0000;
-    }
     public static final class id {
         public static final int ScrollView01=0x7f090009;
         public static final int SpinnerCategoriaItem_name=0x7f090001;
@@ -109,16 +105,18 @@ containing a value of this type.
         public static final int cabecalho=0x7f090006;
         public static final int categoria_spinner_tableRow1=0x7f090000;
         public static final int conteiner_corpo=0x7f09000a;
-        public static final int context_menu_delete=0x7f09000f;
-        public static final int context_menu_register=0x7f09000d;
-        public static final int context_menu_update=0x7f09000e;
-        public static final int llRoot=0x7f09000b;
+        public static final int context_menu_delete=0x7f090011;
+        public static final int context_menu_register=0x7f09000f;
+        public static final int context_menu_update=0x7f090010;
+        public static final int enviar_sugestao_btn_enviarSugestao=0x7f09000c;
+        public static final int enviar_sugestao_txtMensagemSugestao=0x7f09000b;
+        public static final int llRoot=0x7f09000d;
         public static final int main_btn_allergie=0x7f090003;
         public static final int main_btn_category=0x7f090002;
         public static final int main_btn_sugestion=0x7f090004;
         public static final int rodape=0x7f090008;
         public static final int texto1=0x7f090007;
-        public static final int tvTexto=0x7f09000c;
+        public static final int tvTexto=0x7f09000e;
     }
     public static final class layout {
         public static final int cad_alergia=0x7f030000;
@@ -133,10 +131,10 @@ containing a value of this type.
         public static final int toast_layout=0x7f030009;
     }
     public static final class listar_alergia {
-        public static final int lista=0x7f0d0000;
+        public static final int lista=0x7f0c0000;
     }
     public static final class listar_categoria {
-        public static final int lista=0x7f0e0000;
+        public static final int lista=0x7f0d0000;
     }
     public static final class menu {
         public static final int context_menu=0x7f060000;
@@ -146,20 +144,20 @@ containing a value of this type.
         public static final int menu_listar_categoria=0x7f060004;
     }
     public static final class menu_detalhes_alergia {
+        public static final int alterar=0x7f0e0000;
+        public static final int excluir=0x7f0e0002;
+        public static final int voltar=0x7f0e0001;
+    }
+    public static final class menu_detalhes_categoria {
         public static final int alterar=0x7f0f0000;
         public static final int excluir=0x7f0f0002;
         public static final int voltar=0x7f0f0001;
     }
-    public static final class menu_detalhes_categoria {
-        public static final int alterar=0x7f100000;
-        public static final int excluir=0x7f100002;
-        public static final int voltar=0x7f100001;
-    }
     public static final class menu_listar_alergia {
-        public static final int cadastrar=0x7f110000;
+        public static final int cadastrar=0x7f100000;
     }
     public static final class menu_listar_categoria {
-        public static final int cadastrar=0x7f120000;
+        public static final int cadastrar=0x7f110000;
     }
     public static final class string {
         /**  Enviar Sugestão [FIM] 
@@ -334,7 +332,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:backgroundColor
+          @attr name info.diegoramos.alergias:backgroundColor
         */
         public static final int com_admob_android_ads_AdView_backgroundColor = 0;
         /**
@@ -348,7 +346,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:keywords
+          @attr name info.diegoramos.alergias:keywords
         */
         public static final int com_admob_android_ads_AdView_keywords = 3;
         /**
@@ -363,7 +361,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:primaryTextColor
+          @attr name info.diegoramos.alergias:primaryTextColor
         */
         public static final int com_admob_android_ads_AdView_primaryTextColor = 1;
         /**
@@ -377,7 +375,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:refreshInterval
+          @attr name info.diegoramos.alergias:refreshInterval
         */
         public static final int com_admob_android_ads_AdView_refreshInterval = 4;
         /**
@@ -392,7 +390,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:secondaryTextColor
+          @attr name info.diegoramos.alergias:secondaryTextColor
         */
         public static final int com_admob_android_ads_AdView_secondaryTextColor = 2;
     };

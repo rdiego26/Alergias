@@ -41,7 +41,7 @@ public class EnviarSugestao extends Activity
 		destinatario  = getString(R.string.email_autor);
 		
 		//Mapeia o objeto que contem o texto
-		txtMensagem = (EditText) findViewById(R.enviar_sugestao.txtMensagemSugestao);
+		txtMensagem = (EditText) findViewById(R.id.enviar_sugestao_txtMensagemSugestao);
 		
 		//Configurando o  objeto para envio de email
 		emailIntent.setType("plain/text");

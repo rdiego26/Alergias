@@ -56,11 +56,10 @@
 				>
 
 		        <info.diegoramos.alergias.componentes.LineEditText
-		            android:id="@+enviar_sugestao/txtMensagemSugestao"
+		            android:id="@+id/enviar_sugestao_txtMensagemSugestao"
 		            android:layout_width="wrap_content"
 		            android:layout_height="fill_parent"
 		            android:layout_gravity="left"
-		            android:gravity="start"
 		            android:ems="10"
 		            android:lines="10"
 		            android:width="350sp"
@@ -68,7 +67,7 @@
 		            />
 		    
 				<Button 
-				    android:id="@+enviar_sugestao/btn_enviarSugestao"
+				    android:id="@+id/enviar_sugestao_btn_enviarSugestao"
 			        android:layout_height="wrap_content"
 			        android:layout_width="wrap_content"
 			        android:text="@string/lbl_btn_sugestao"		
