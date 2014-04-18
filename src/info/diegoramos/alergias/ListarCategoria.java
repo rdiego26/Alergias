@@ -48,7 +48,7 @@ public class ListarCategoria extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listar_categoria);
 		
-		listV = (ListView) findViewById(R.listar_categoria.lista);
+		listV = (ListView) findViewById(R.id.listar_categoria_lista);
 		
 		//Simple tap in ListView item
 		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
@@ -98,7 +98,7 @@ public class ListarCategoria extends Activity
 	public void loadList()
 	{
 		
-		ListView lv = (ListView) findViewById(R.listar_categoria.lista);
+		ListView lv = (ListView) findViewById(R.id.listar_categoria_lista);
 		lista = DAOC.findAll();
 		
 		

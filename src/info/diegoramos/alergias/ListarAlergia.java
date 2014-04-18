@@ -47,7 +47,7 @@ public class ListarAlergia extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listar_alergia);
 		
-		listV = (ListView) findViewById(R.listar_alergia.lista);
+		listV = (ListView) findViewById(R.id.listar_alergia_lista);
 		
 		//Simple tap in ListView item
 		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
@@ -100,7 +100,7 @@ public class ListarAlergia extends Activity
 	public void loadList()
 	{
 		
-		ListView lv = (ListView) findViewById(R.listar_alergia.lista);
+		ListView lv = (ListView) findViewById(R.id.listar_alergia_lista);
 		lista = daoA.findAll();
 		
 		//Setando Mensagens
