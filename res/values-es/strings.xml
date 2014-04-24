@@ -58,6 +58,8 @@
    <string name="lbl_falha_exclusao_alergia">El intento de eliminar!</string>   
    <string name="lbl_sucesso_exclusao_categoria">Categoría eliminado!</string>
    <string name="lbl_falha_exclusao_categoria">El intento de eliminar!</string>   
+   
+   <string name="lbl_falha_abertura_market">No se puede abrir Google Play, instalar la aplicación desde Google Play y vuelva a intentarlo.</string>
    <!--  ERROS [FIM]-->
    
    <!-- Utils [INICIO] -->   
@@ -72,8 +74,9 @@
    
 	<string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>	   
    
-            <!-- DASHBOARD -->
+    <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Sugerencias</string>
+	<string name="dashboard_txtAvaliacao">Avaliar</string>
 	<string name="dashboard_txtCategoria">Categorías</string>
 	<string name="dashboard_txtAlergia">Alergias</string>
 	

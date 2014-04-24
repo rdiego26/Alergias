@@ -58,7 +58,9 @@
    <string name="lbl_sucesso_exclusao_alergia">Alergia excluída!</string>
    <string name="lbl_falha_exclusao_alergia">Falha na tentativa de exclusão!</string>   
    <string name="lbl_sucesso_exclusao_categoria">Categoria excluída!</string>
-   <string name="lbl_falha_exclusao_categoria">Falha na tentativa de exclusão!</string>   
+   <string name="lbl_falha_exclusao_categoria">Falha na tentativa de exclusão!</string>
+   
+   <string name="lbl_falha_abertura_market">Não foi possível abrir o Google Play, instale o aplicativo do Google Play e tente novamente.</string>
    <!--  ERROS [FIM]-->
    
    <!-- Utils [INICIO] -->   
@@ -75,6 +77,7 @@
    
    <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Sugestões</string>
+	<string name="dashboard_txtAvaliacao">Avaliar</string>
 	<string name="dashboard_txtCategoria">Categorias</string>
 	<string name="dashboard_txtAlergia">Alergias</string>
 	

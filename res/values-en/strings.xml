@@ -59,6 +59,8 @@
    <string name="lbl_falha_exclusao_alergia">Attempting to delete!</string>   
    <string name="lbl_sucesso_exclusao_categoria">Category deleted!</string>
    <string name="lbl_falha_exclusao_categoria">Attempting to delete!</string>   
+   
+   <string name="lbl_falha_abertura_market">Unable to open Google Play, install the app from Google Play and try again.</string>
    <!--  ERROS [FIM]-->   
    
    <!-- Utils [INICIO] -->   
@@ -75,6 +77,7 @@
    
    <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Suggestions</string>
+	<string name="dashboard_txtAvaliacao">Rate</string>
 	<string name="dashboard_txtCategoria">Categories</string>
 	<string name="dashboard_txtAlergia">Allergies</string>
 	

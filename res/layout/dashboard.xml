@@ -40,7 +40,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal" >
- 
+
+            <Button
+                android:id="@+id/main_btn_rate"
+                android:drawableTop="@drawable/star_yellow"
+                style="@style/DashBoardButton"
+                android:onClick="onButtonClicker"
+                android:text="@string/dashboard_txtAvaliacao" />            
+            
             <Button
                 android:id="@+id/main_btn_sugestion"
                 android:drawableTop="@drawable/lamp"
