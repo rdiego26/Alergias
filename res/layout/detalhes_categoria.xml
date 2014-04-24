@@ -12,14 +12,14 @@
         />
     
     <EditText 
-        	android:id="@+detalhes_categoria/txtNomeCategoria"
+        	android:id="@+id/detalhes_categoria_txtNomeCategoria"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:inputType="text"
         />
     
     <Button 
-        android:id="@+detalhes_categoria/btnAtualizar"
+        android:id="@+id/detalhes_categoria_btnAtualizar"
 		style="@style/botao"
         android:text="@string/lbl_btn_atualizar"
         android:onClick="update"

@@ -36,7 +36,7 @@ public class DetalhesCategoria extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detalhes_categoria);
 		
-		edtNome = (EditText) findViewById(R.detalhes_categoria.txtNomeCategoria);
+		edtNome = (EditText) findViewById(R.id.detalhes_categoria_txtNomeCategoria);
 		
 		loadContent();
 		

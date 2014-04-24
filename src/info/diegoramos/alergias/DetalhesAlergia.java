@@ -52,9 +52,9 @@ public class DetalhesAlergia extends Activity{
 	    
 	    
 		//Componentes
-		spiCategoria = (Spinner)findViewById(R.detalhes_alergia.sp_categoria);
-		edtNome = (EditText)findViewById(R.detalhes_alergia.txtNomeAlergia);
-		edtObs = (EditText)findViewById(R.detalhes_alergia.txtObsAlergia);
+		spiCategoria = (Spinner)findViewById(R.id.detalhes_alergia_sp_categoria);
+		edtNome = (EditText)findViewById(R.id.detalhes_alergia_txtNomeAlergia);
+		edtObs = (EditText)findViewById(R.id.detalhes_alergia_txtObsAlergia);
 	    
 		loadCategoriaSpinner();
 		loadContent();
