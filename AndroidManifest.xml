@@ -38,6 +38,8 @@
 		<activity android:name="com.google.ads.AdActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|uiMode|orientation|screenLayout|screenSize|smallestScreenSize" />
     	<!-- ADMOB -->
     
+    	<!--  BACKUP -->
+    	<meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIKbwQRtgmPDtHx7Qxu4VjrvN5MTew3cgPqP18jw" />
     </application>
 
 </manifest>

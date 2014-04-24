@@ -1,8 +1,10 @@
 package info.diegoramos.alergias;
 
 import info.diegoramos.alergias.R;
+import info.diegoramos.alergias.Utils.ToastManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,11 +15,15 @@ import android.view.View;
  */
 public class TelaInicial extends Activity {
 
+	String msgFalhaMarket;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
+        
+        msgFalhaMarket = getString(R.string.lbl_falha_abertura_market);
     }
     
     /**
@@ -35,6 +41,18 @@ public class TelaInicial extends Activity {
     	case R.id.main_btn_allergie:
     			startActivity(new Intent(getApplicationContext(), ListarAlergia.class));
     			break;
+
+    	case R.id.main_btn_rate:
+    			//Try Google play
+    			Intent intent = new Intent(Intent.ACTION_VIEW);
+    		    intent.setData(Uri.parse("market://details?id=info.diegoramos.alergias"));
+    		    try {
+    		    	startActivity(intent);
+    		    } catch(Exception ex) {
+    		    	ToastManager.show(getApplicationContext(), msgFalhaMarket, 2);
+    		    }
+    		    
+				break;    			
     			
     	case R.id.main_btn_sugestion:
 				startActivity(new Intent(getApplicationContext(), EnviarSugestao.class));
@@ -43,8 +61,6 @@ public class TelaInicial extends Activity {
     	default: break;
     	}
     	
-    	
     }
-    
     
 }
