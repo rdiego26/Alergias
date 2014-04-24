@@ -10,7 +10,7 @@
     
 	<style name="inputStyle" parent="@style/textFont">
         <item name="android:textSize">17sp</item>
-	    <item name="android:textColor">#696969</item>
+	    <item name="android:textColor">#FFFFFF</item>
 	    <item name="android:inputType">textCapWords</item>
     </style>
     

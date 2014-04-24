@@ -53,11 +53,11 @@ public class CadastrarAlergia extends Activity
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista_nome_categoria);
 		//ArrayAdapter<String> spinnerArrayAdapter = dataAdapter;
 		
-		final Spinner spiCategoria = (Spinner) findViewById(R.cad_alergia.sp_categoria);
+		final Spinner spiCategoria = (Spinner) findViewById(R.id.cad_alergia_sp_categoria);
 		spiCategoria.setAdapter(dataAdapter);
 
 		//Tratamento do bot�o Cadastrar
-		Button btn = (Button) findViewById(R.cad_alergia.btn_cadastrar);
+		Button btn = (Button) findViewById(R.id.cad_alergia_btn_cadastrar);
 		btn.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View v)
@@ -65,8 +65,8 @@ public class CadastrarAlergia extends Activity
 				Alergia A = new Alergia();
 				
 				//Obtendo os valores dos campos
-				EditText edtNome = (EditText) findViewById(R.cad_alergia.txt_nome_alergia);
-				EditText edtObs =  (EditText) findViewById(R.cad_alergia.txt_obs_alergia);
+				EditText edtNome = (EditText) findViewById(R.id.cad_alergia_txt_nome_alergia);
+				EditText edtObs =  (EditText) findViewById(R.id.cad_alergia_txt_obs_alergia);
 				Integer id_categoria_tela = Integer.valueOf(lista_id_categoria.get((int) spiCategoria.getSelectedItemId() ));
 				
 				A.setNome(edtNome.getText().toString());

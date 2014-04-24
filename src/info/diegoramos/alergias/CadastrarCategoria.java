@@ -26,7 +26,6 @@ public class CadastrarCategoria extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.cad_categoria);
 		
@@ -34,7 +33,7 @@ public class CadastrarCategoria extends Activity
 		DAOC = DAOCategoria.getInstance(this);
 
 		//Tratamento do bot�o Cadastrar
-		Button btn = (Button) findViewById(R.cad_categoria.btn_cadastrar);
+		Button btn = (Button) findViewById(R.id.cad_categoria_btn_cadastrar);
 		btn.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View v)
@@ -42,7 +41,7 @@ public class CadastrarCategoria extends Activity
 				Categoria C = new Categoria();
 				
 				//Obtendo os valores dos campos
-				EditText edtNome = (EditText) findViewById(R.cad_categoria.txt_nome_categoria);
+				EditText edtNome = (EditText) findViewById(R.id.cad_categoria_txt_nome_categoria);
 			
 				C.setNome(edtNome.getText().toString());
 				
