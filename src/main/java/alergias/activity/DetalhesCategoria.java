@@ -57,18 +57,18 @@ public class DetalhesCategoria extends Activity
     
     /**
      * Responsável por efetuar a atualização do objeto Categoria
-     * @param View ( ListarCategoria )
+     * @param vw ( ListarCategoria )
      */    
     public void update(View vw) {
     	daoC = DAOCategoria.getInstance(this);
     	
     	c.setNome(edtNome.getText().toString());
     	
-		msg_duplicidade_categoria = this.getString(R.string.lbl_erro_duplicidade_categoria);
-		msg_sucesso_gravacao = this.getString(R.string.lbl_sucesso_cadastro_categoria);
-		msg_falha_gravacao = this.getString(R.string.lbl_falha_cadastro_categoria);	
-		msg_sucesso_alteracao = this.getString(R.string.lbl_sucesso_alteracao_categoria);
-		msg_falha_alteracao = this.getString(R.string.lbl_falha_alteracao_categoria);
+		msg_duplicidade_categoria = getString(R.string.lbl_erro_duplicidade_categoria);
+		msg_sucesso_gravacao = getString(R.string.lbl_sucesso_cadastro_categoria);
+		msg_falha_gravacao = getString(R.string.lbl_falha_cadastro_categoria);
+		msg_sucesso_alteracao = getString(R.string.lbl_sucesso_alteracao_categoria);
+		msg_falha_alteracao = getString(R.string.lbl_falha_alteracao_categoria);
 		
 		//Validação dos campos
 		validacoes validate = new validacoes();				
