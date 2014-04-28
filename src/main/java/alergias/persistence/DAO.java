@@ -1,6 +1,6 @@
-package info.diegoramos.alergias.persistence;
+package alergias.persistence;
 
-import info.diegoramos.alergias.banco.Tabelas;
+import alergias.banco.Tabelas;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

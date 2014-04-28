@@ -1,4 +1,4 @@
-package info.diegoramos.alergias.entity;
+package alergias.entity;
 
 import java.io.Serializable;
 

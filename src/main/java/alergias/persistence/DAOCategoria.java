@@ -1,7 +1,7 @@
-package info.diegoramos.alergias.persistence;
+package alergias.persistence;
 
-import info.diegoramos.alergias.entity.Alergia;
-import info.diegoramos.alergias.entity.Categoria;
+import alergias.entity.Alergia;
+import alergias.entity.Categoria;
 
 import java.util.ArrayList;
 import java.util.List;

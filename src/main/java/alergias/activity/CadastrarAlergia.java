@@ -1,11 +1,11 @@
-package activity;
+package alergias.activity;
 
 import info.diegoramos.alergias.R;
 import Utils.ToastManager;
-import info.diegoramos.alergias.Utils.validacoes;
-import info.diegoramos.alergias.entity.Alergia;
-import info.diegoramos.alergias.persistence.DAOAlergia;
-import info.diegoramos.alergias.persistence.DAOCategoria;
+import alergias.Utils.validacoes;
+import alergias.entity.Alergia;
+import alergias.persistence.DAOAlergia;
+import alergias.persistence.DAOCategoria;
 
 import java.util.ArrayList;
 import java.util.List;

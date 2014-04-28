@@ -1,4 +1,4 @@
-package info.diegoramos.alergias.componentes;
+package alergias.componentes;
 
 import android.content.Context;
 import android.graphics.Canvas;

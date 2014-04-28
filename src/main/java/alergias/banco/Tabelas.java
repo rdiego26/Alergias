@@ -1,4 +1,4 @@
-package info.diegoramos.alergias.banco;
+package alergias.banco;
 
 public class Tabelas {
 

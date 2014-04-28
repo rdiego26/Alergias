@@ -1,8 +1,8 @@
-package info.diegoramos.alergias.componentes;
+package alergias.componentes;
 
 import info.diegoramos.alergias.R;
-import info.diegoramos.alergias.entity.Categoria;
-import info.diegoramos.alergias.persistence.DAOCategoria;
+import alergias.entity.Categoria;
+import alergias.persistence.DAOCategoria;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,10 +1,10 @@
-package activity;
+package alergias.activity;
 
 import info.diegoramos.alergias.R;
 import Utils.ToastManager;
-import info.diegoramos.alergias.Utils.validacoes;
-import info.diegoramos.alergias.entity.Categoria;
-import info.diegoramos.alergias.persistence.DAOCategoria;
+import alergias.Utils.validacoes;
+import alergias.entity.Categoria;
+import alergias.persistence.DAOCategoria;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
