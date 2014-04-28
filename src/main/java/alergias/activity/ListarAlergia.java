@@ -149,7 +149,7 @@ public class ListarAlergia extends Activity
     	//Verificando qual item do menu foi selecionado
     	switch (item.getItemId())
     	{
-    		case R.menu_listar_alergia.cadastrar:
+    		case R.id.menu_listar_alergia_cadastrar:
     			intencao = new Intent(this, CadastrarAlergia.class);
     			startActivity(intencao);
     			return true;

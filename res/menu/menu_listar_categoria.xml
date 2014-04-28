@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item 
-        android:id="@+menu_listar_categoria/cadastrar"
+        android:id="@+id/menu_listar_categoria_cadastrar"
         android:title="@string/lbl_menu_cad_cadastrar"
 		android:icon="@drawable/add"
         />       

@@ -148,7 +148,7 @@ public class ListarCategoria extends Activity
     	//Verificando qual item do menu foi selecionado
     	switch (item.getItemId())
     	{
-    		case R.menu_listar_categoria.cadastrar:
+    		case R.id.menu_listar_categoria_cadastrar:
     			intencao = new Intent(this, CadastrarCategoria.class);
     			startActivity(intencao);
     			return true;
