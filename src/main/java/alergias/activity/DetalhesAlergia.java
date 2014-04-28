@@ -77,7 +77,6 @@ public class DetalhesAlergia extends Activity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        Intent intencao;
 
         //Verificando qual item do menu foi selecionado
         switch (item.getItemId())
@@ -93,7 +92,6 @@ public class DetalhesAlergia extends Activity{
                 return true;
             default:
                 return false;
-
         }
 
     }
