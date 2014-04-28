@@ -9,7 +9,11 @@ import alergias.entity.Categoria;
 import alergias.persistence.DAOAlergia;
 import alergias.persistence.DAOCategoria;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -31,12 +35,10 @@ public class DetalhesAlergia extends Activity{
 	
 	
 	//Mensagens
-	String msg_duplicidade_alergia;
-	String msg_sucesso_gravacao;
-	String msg_falha_gravacao;	
-	String msg_sucesso_alteracao;
-	String msg_falha_alteracao;
-	
+	String msg_duplicidade_alergia, msg_sucesso_gravacao, msg_falha_gravacao;
+	String msg_falha_exclusao, msg_sucesso_exclusao;
+	String msg_sucesso_alteracao, msg_falha_alteracao;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -60,7 +62,43 @@ public class DetalhesAlergia extends Activity{
 		loadContent();
 		
 	}
-    
+
+    //Colocando o menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_detalhes_alergia, menu);
+
+        return true;
+    }
+
+    //Tratando item selecionado no menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        Intent intencao;
+
+        //Verificando qual item do menu foi selecionado
+        switch (item.getItemId())
+        {
+            case R.id.menu_detalhes_alergia_alterar:
+                update(null);
+                return true;
+            case R.id.menu_detalhes_alergia_voltar:
+                finish();
+                return true;
+            case R.id.menu_detalhes_alergia_excluir:
+                delete();
+                return true;
+            default:
+                return false;
+
+        }
+
+    }
+
+
     /**
      * Responsável por obter um objeto Categoria serializado e setar os valores na tela
      */    
@@ -128,8 +166,8 @@ public class DetalhesAlergia extends Activity{
 		
 		
 		String msg_duplicidade_alergia = getString(R.string.lbl_erro_duplicidade_alergia);
-		String msg_sucesso_gravacao = getString(R.string.lbl_sucesso_cadastro_alergia);
-		String msg_falha_gravacao = getString(R.string.lbl_falha_cadastro_alergia);
+		String msg_sucesso_gravacao = getString(R.string.lbl_sucesso_alteracao_alergia);
+		String msg_falha_gravacao = getString(R.string.lbl_falha_alteracao_alergia);
 		
 		if(aux1 != true)
 		{
@@ -150,9 +188,21 @@ public class DetalhesAlergia extends Activity{
 					ToastManager.show(getApplicationContext(), msg_falha_gravacao, 1);
 				}
 			}
-		}		
-		
-		
+		}
 	}
-	
+
+    private void delete() {
+        daoA = DAOAlergia.getInstance(this);
+
+        msg_falha_exclusao =  getString(R.string.lbl_falha_exclusao_alergia);
+        msg_sucesso_exclusao = getString(R.string.lbl_sucesso_exclusao_alergia);
+
+        if ( daoA.delete(a.getId_alergia()) == -1 ) {
+            ToastManager.show(getApplicationContext(), msg_falha_exclusao, 2);
+        }
+        else {
+            ToastManager.show(getApplicationContext(), msg_sucesso_exclusao, 0);
+            finish();
+        }
+    }
 }
