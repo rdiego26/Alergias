@@ -28,3 +28,34 @@ proguard/
 *.iws
 .idea/
 
+# Gradle
+*~
+.gradle
+/build
+/out
+/intTestHomeDir
+/subprojects/*/out
+/intellij
+/buildSrc/lib
+/buildSrc/build
+/subprojects/*/build
+/subprojects/docs/src/samples/*/*/build
+/website/build
+/website/website.iml
+/website/website.ipr
+/website/website.iws
+/performanceTest/build
+/subprojects/*/ide
+/subprojects/*/*.iml
+/buildSrc/*.ipr
+/buildSrc/*.iws
+/buildSrc/*.iml
+/buildSrc/out
+*.settings
+/subprojects/*/bin
+.DS_Store
+/performanceTest/lib
+.textmate
+/incoming-distributions
+*.sublime-*
+.nb-gradle
