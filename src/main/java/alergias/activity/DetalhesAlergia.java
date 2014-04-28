@@ -1,7 +1,7 @@
 package alergias.activity;
 
 import info.diegoramos.alergias.R;
-import Utils.ToastManager;
+import alergias.Utils.ToastManager;
 import alergias.Utils.validacoes;
 import alergias.componentes.CategoriaSpinnerAdapter;
 import alergias.entity.Alergia;

@@ -2,7 +2,7 @@ package alergias.activity;
 
 
 import info.diegoramos.alergias.R;
-import Utils.ToastManager;
+import alergias.Utils.ToastManager;
 import alergias.entity.Alergia;
 import alergias.persistence.DAOAlergia;
 
