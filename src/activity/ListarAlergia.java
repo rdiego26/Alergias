@@ -1,9 +1,10 @@
-package info.diegoramos.alergias;
+package activity;
+
 
 import info.diegoramos.alergias.R;
 import info.diegoramos.alergias.Utils.ToastManager;
-import info.diegoramos.alergias.entity.Categoria;
-import info.diegoramos.alergias.persistence.DAOCategoria;
+import info.diegoramos.alergias.entity.Alergia;
+import info.diegoramos.alergias.persistence.DAOAlergia;
 
 import java.util.List;
 
@@ -11,44 +12,42 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 /**
  * 
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class ListarCategoria extends Activity
+public class ListarAlergia extends Activity
 {
 
-	DAOCategoria DAOC;
+	DAOAlergia daoA;
 	String conteudo[];
-	List<Categoria> lista;
+	List<Alergia> lista;
 	private ListView listV;
-	private int posicao;
+	private int posicao;	
 
 	//Mensagens
-	String msg_lista_categoria_vazia;
+	String msg_lista_alergia_vazia;
 	String msgError = null;
-	String msgSucess = null;
+	String msgSucess = null;	
 	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.listar_categoria);
+		setContentView(R.layout.listar_alergia);
 		
-		listV = (ListView) findViewById(R.id.listar_categoria_lista);
+		listV = (ListView) findViewById(R.id.listar_alergia_lista);
 		
 		//Simple tap in ListView item
 		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
@@ -56,21 +55,24 @@ public class ListarCategoria extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> parent, View wv, int position,
 					long id) {
-				Categoria c = (Categoria) lista.get(position);
-    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+				Alergia a = (Alergia) lista.get(position);
+    			Intent intent = new Intent(getApplicationContext(), DetalhesAlergia.class);
     			Bundle param = new Bundle();
     			
-    			param.putSerializable("_object_categoria", c);
+    			param.putSerializable("_object_alergia", a);
     			intent.putExtras(param);
     			startActivity(intent);
 			}
-		});		
+		});			
 		
-		DAOC = DAOCategoria.getInstance(this); // trabalhando com SINGLETON
+		
+		
+		daoA = DAOAlergia.getInstance(this); // trabalhando com SINGLETON
 		
 		registerForContextMenu(listV);
 		loadList();
 	}
+	
 	
 	@Override
 	protected void onStart() {
@@ -98,58 +100,57 @@ public class ListarCategoria extends Activity
 	public void loadList()
 	{
 		
-		ListView lv = (ListView) findViewById(R.id.listar_categoria_lista);
-		lista = DAOC.findAll();
-		
+		ListView lv = (ListView) findViewById(R.id.listar_alergia_lista);
+		lista = daoA.findAll();
 		
 		//Setando Mensagens
-		msg_lista_categoria_vazia = this.getString(R.string.lbl_cabecalho_lst_vazia_categoria);
+		msg_lista_alergia_vazia = this.getString(R.string.lbl_cabecalho_lst_vazia_alergia);		
+		
 		
 		StringBuilder sb = new StringBuilder();
 
-		
 		if(lista.size() > 0)
 		{
-			for(Categoria C : lista)
+			for(Alergia A : lista)
 			{
-				sb.append(C.getNome()  + "<>"); //TAG "<>" utilizada para quebra os nomes
+				sb.append(A.getNome()  + "<>"); //TAG "<>" utilizada para quebra os nomes
 			}
 			conteudo = sb.toString().split("<>");
-			ArrayAdapter<String> addCategoria = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
-			
-			lv.setAdapter(addCategoria);
+			ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
+			lv.setAdapter(addAlergia);
 		}
 		else
 		{
-			Toast.makeText(getApplicationContext(), msg_lista_categoria_vazia, Toast.LENGTH_SHORT).show();
+			conteudo = sb.toString().split("<>");
+			ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
+			lv.setAdapter(addAlergia);
+			ToastManager.show(getApplicationContext(), msg_lista_alergia_vazia, 0);
 
 		}
 	
-	}	
+	}
 
     //Colocando o menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
     	MenuInflater inflater = getMenuInflater();
-    	inflater.inflate(R.menu.menu_listar_categoria, menu);
+    	inflater.inflate(R.menu.menu_listar_alergia, menu);
    	
     	return true;
     }
-	
 
     //Tratando item selecionado no menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-    	// TODO Auto-generated method stub
     	Intent intencao;
     	
     	//Verificando qual item do menu foi selecionado
     	switch (item.getItemId())
     	{
-    		case R.menu_listar_categoria.cadastrar:
-    			intencao = new Intent(this, CadastrarCategoria.class);
+    		case R.menu_listar_alergia.cadastrar:
+    			intencao = new Intent(this, CadastrarAlergia.class);
     			startActivity(intencao);
     			return true;
     	
@@ -174,20 +175,20 @@ public class ListarCategoria extends Activity
     
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-    	Categoria categoria;
+    	Alergia alergia;
     	
     	switch (item.getItemId()) {
     	
     	case R.id.context_menu_register:
-    			startActivity(new Intent(this, CadastrarCategoria.class));
+    			startActivity(new Intent(this, CadastrarAlergia.class));
     		break;
     	
     	case R.id.context_menu_delete:
-    			categoria = (Categoria) lista.get(posicao);
-    			msgError = this.getString(R.string.lbl_falha_exclusao_categoria);
-    			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_categoria);
+    			alergia = (Alergia) lista.get(posicao);
+    			msgError = this.getString(R.string.lbl_falha_exclusao_alergia);
+    			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_alergia);
     			
-    			if ( DAOC.delete(categoria.getId_categoria(), getApplicationContext()) == -1 ) {
+    			if ( daoA.delete(alergia.getId_alergia()) == -1 ) {
     				ToastManager.show(getApplicationContext(), msgError, 2);
     			}
     			else {
@@ -197,11 +198,11 @@ public class ListarCategoria extends Activity
     			
     			break;
     	case R.id.context_menu_update:
-    			categoria = (Categoria) lista.get(posicao);
-    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+    			alergia = (Alergia) lista.get(posicao);
+    			Intent intent = new Intent(getApplicationContext(), DetalhesAlergia.class);
     			Bundle param = new Bundle();
     			
-    			param.putSerializable("_object_categoria", categoria);
+    			param.putSerializable("_object_alergia", alergia);
     			intent.putExtras(param);
     			startActivity(intent);    			
     			
@@ -212,8 +213,8 @@ public class ListarCategoria extends Activity
 		}
     	
     	return true;
-    }    
-	
-	
-	
+    }        
+    
+    
+    
 }

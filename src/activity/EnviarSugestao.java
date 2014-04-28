@@ -1,4 +1,4 @@
-package info.diegoramos.alergias;
+package activity;
 
 import info.diegoramos.alergias.R;
 import android.app.Activity;
