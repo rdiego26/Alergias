@@ -185,8 +185,8 @@ public class ListarAlergia extends Activity
     	
     	case R.id.context_menu_delete:
     			alergia = (Alergia) lista.get(posicao);
-    			msgError = this.getString(R.string.lbl_falha_exclusao_alergia);
-    			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_alergia);
+    			msgError =  getString(R.string.lbl_falha_exclusao_alergia);
+    			msgSucess = getString(R.string.lbl_sucesso_exclusao_alergia);
     			
     			if ( daoA.delete(alergia.getId_alergia()) == -1 ) {
     				ToastManager.show(getApplicationContext(), msgError, 2);
