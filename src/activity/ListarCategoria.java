@@ -1,7 +1,7 @@
 package activity;
 
 import info.diegoramos.alergias.R;
-import info.diegoramos.alergias.Utils.ToastManager;
+import Utils.ToastManager;
 import info.diegoramos.alergias.entity.Categoria;
 import info.diegoramos.alergias.persistence.DAOCategoria;
 
