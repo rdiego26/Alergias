@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item 
-        android:id="@+menu_detalhes_categoria/alterar"
+        android:id="@+id/menu_detalhes_categoria_alterar"
         android:title="@string/lbl_menu_alterar"
 		android:icon="@drawable/disk_blue"
         /> 
 
     <item 
-        android:id="@+menu_detalhes_categoria/voltar"
+        android:id="@+id/menu_detalhes_categoria_voltar"
         android:title="@string/lbl_menu_voltar"
 		android:icon="@drawable/undo"
         />     
 
     <item 
-        android:id="@+menu_detalhes_categoria/excluir"
+        android:id="@+id/menu_detalhes_categoria_excluir"
         android:title="@string/lbl_menu_excluir"
 		android:icon="@drawable/delete2"
         />     

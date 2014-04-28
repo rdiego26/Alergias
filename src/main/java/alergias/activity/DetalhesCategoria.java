@@ -7,6 +7,9 @@ import alergias.entity.Categoria;
 import alergias.persistence.DAOCategoria;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -24,11 +27,9 @@ public class DetalhesCategoria extends Activity
 	EditText edtNome;
 
 	//Mensagens
-	String msg_duplicidade_categoria;
-	String msg_sucesso_gravacao;
-	String msg_falha_gravacao;	
-	String msg_sucesso_alteracao;
-	String msg_falha_alteracao;
+	String msg_duplicidade_categoria, msg_sucesso_gravacao, msg_falha_gravacao;
+	String msg_sucesso_alteracao, msg_falha_alteracao;
+    String msg_sucesso_exclusao, msg_falha_exclusao;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -40,8 +41,42 @@ public class DetalhesCategoria extends Activity
 		
 		loadContent();
 		
-	}	
-    
+	}
+
+    //Colocando o menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_detalhes_categoria, menu);
+
+        return true;
+    }
+
+
+    //Tratando item selecionado no menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+
+        //Verificando qual item do menu foi selecionado
+        switch (item.getItemId())
+        {
+            case R.id.menu_detalhes_categoria_alterar:
+                update(null);
+                return true;
+            case R.id.menu_detalhes_categoria_voltar:
+                finish();
+                return true;
+            case R.id.menu_detalhes_categoria_excluir:
+                delete();
+                return true;
+            default:
+                return false;
+        }
+
+    }
+
   /**
    * Responsável por obter um objeto Categoria serializado e setar os valores na tela
    */
@@ -95,6 +130,22 @@ public class DetalhesCategoria extends Activity
 				}
 			}		
 		}
+    }
+
+
+    private void delete() {
+        daoC = DAOCategoria.getInstance(this);
+
+        msg_falha_exclusao =  getString(R.string.lbl_falha_exclusao_categoria);
+        msg_sucesso_exclusao = getString(R.string.lbl_sucesso_exclusao_categoria);
+
+        if ( daoC.delete(c.getId_categoria(), this) == -1 ) {
+            ToastManager.show(getApplicationContext(), msg_falha_exclusao, 2);
+        }
+        else {
+            ToastManager.show(getApplicationContext(), msg_sucesso_exclusao, 0);
+            finish();
+        }
     }
     
 }
