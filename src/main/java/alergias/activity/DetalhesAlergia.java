@@ -86,7 +86,7 @@ public class DetalhesAlergia extends Activity{
     }
     /**
      * Recebe um objeto Categoria e seta este no Spinner Categoria
-     * @param Categoria
+     * @param cat
      */
     
 	private void setCategoriaSpinner(Categoria cat) {
@@ -111,7 +111,7 @@ public class DetalhesAlergia extends Activity{
 	
 	/**
     * Responsável por efetuar a atualização do objeto Alergia
-    * @param View ( ListarAlergia )
+    * @param vw ( ListarAlergia )
     */    	
 	public void update(View vw) {
 		daoA = DAOAlergia.getInstance(this);
