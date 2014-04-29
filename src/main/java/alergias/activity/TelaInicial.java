@@ -1,6 +1,6 @@
 package alergias.activity;
 
-import info.diegoramos.alergias.R;
+import info.diegoramos.alergiass.R;
 import alergias.Utils.ToastManager;
 import android.app.Activity;
 import android.content.Intent;
@@ -45,7 +45,7 @@ public class TelaInicial extends Activity {
     	case R.id.main_btn_rate:
     			//Try Google play
     			Intent intent = new Intent(Intent.ACTION_VIEW);
-    		    intent.setData(Uri.parse("market://details?id=info.diegoramos.alergias"));
+    		    intent.setData(Uri.parse("market://details?id=info.diegoramos.alergiass"));
     		    try {
     		    	startActivity(intent);
     		    } catch(Exception ex) {

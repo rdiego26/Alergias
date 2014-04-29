@@ -1,6 +1,6 @@
 package alergias.activity;
 
-import info.diegoramos.alergias.R;
+import info.diegoramos.alergiass.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

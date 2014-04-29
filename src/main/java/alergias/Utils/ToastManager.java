@@ -1,6 +1,6 @@
 package alergias.Utils;
 
-import info.diegoramos.alergias.R;
+import info.diegoramos.alergiass.R;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;

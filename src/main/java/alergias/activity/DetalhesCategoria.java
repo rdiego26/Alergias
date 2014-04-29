@@ -1,6 +1,6 @@
 package alergias.activity;
 
-import info.diegoramos.alergias.R;
+import info.diegoramos.alergiass.R;
 import alergias.Utils.ToastManager;
 import alergias.Utils.validacoes;
 import alergias.entity.Categoria;

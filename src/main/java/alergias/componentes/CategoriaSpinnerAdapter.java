@@ -1,6 +1,6 @@
 package alergias.componentes;
 
-import info.diegoramos.alergias.R;
+import info.diegoramos.alergiass.R;
 import alergias.entity.Categoria;
 import alergias.persistence.DAOCategoria;
 
