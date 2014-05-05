@@ -8,9 +8,10 @@
         <item name="android:textSize">14sp</item>
     </style>
     
-	<style name="inputStyle" parent="@style/textFont">
+	<style name="inputStyle" parent="@textFont">
         <item name="android:textSize">18sp</item>
 	    <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#ffb6b5b8</item>
 	    <item name="android:inputType">textCapWords</item>
     </style>
     
@@ -21,32 +22,29 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-	<style name="dicas" parent="@style/textFont">
+	<style name="tips" parent="@textFont">
         <item name="android:textSize">12sp</item>
 	    <item name="android:textColor">#006400</item>
     </style>	    
     
 	<style name="botao">
-        <!--
         <item name="android:layout_width">fill_parent</item>
-        -->
-        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_gravity">center</item>
 	    <item name="android:textSize">14sp</item>
-	    <item name="android:textColor">#566D7E</item>
-	    <item name="android:background">@drawable/custom_button</item>
+	    <item name="android:textColor">#fff8ffff</item>
+	    <item name="android:background">@drawable/button_with_shadow</item>
 	</style>
 
-	<style name="basico">
-	    <item name="android:textColor">#B0C4DE</item>
-		<item name="android:background">@drawable/wall</item>
-	</style>
-	
 	<style name="cabecalho">
-	    <item name="android:textColor">#FFFFFF</item>
+	    <item name="android:textColor">#fff8ffff</item>
 	    <item name="android:layout_height">wrap_content</item>
 		<item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:gravity">center_horizontal</item>
 	</style>
 
@@ -74,7 +72,7 @@
         <item name="android:background">#D3D3D3</item>
     </style>
     
-	<style name="DashBoardButton">
+	<style name="dashBoardButton">
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -86,5 +84,23 @@
         <item name="android:background">@null</item>
     </style>	
 	
-				    
+
+    <style name="defaultBackground">
+        <item name="android:background">#ff419fc5</item>
+    </style>
+
+    <style name="containerListItem">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/list_custom_border</item>
+    </style>
+
+    <style name="detailItemList" parent="defaultBackground">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
 </resources>

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:scrollbars="vertical"
-    android:background="@drawable/radial_gradient">
-    
+    style="@style/detailItemList">
+
     <RelativeLayout
-	android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/custom_border">
+        style="@style/containerListItem">
     
 	    <ListView 
 	        	android:id="@+id/listar_alergia_lista"

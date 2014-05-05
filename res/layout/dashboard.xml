@@ -4,9 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/radial_gradient">
- 
-    <!-- android:layout_height="wrap_content" -->
+    style="@style/defaultBackground">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dip"
@@ -23,14 +22,14 @@
             <Button
                 android:id="@+id/main_btn_category"
                 android:drawableTop="@drawable/categoria"
-                style="@style/DashBoardButton"
+                style="@style/dashBoardButton"
                 android:onClick="onButtonClicker"
                 android:text="@string/dashboard_txtCategoria" />
  
             <Button
                 android:id="@+id/main_btn_allergie"
                 android:drawableTop="@drawable/pill_red"
-                style="@style/DashBoardButton"
+                style="@style/dashBoardButton"
                 android:onClick="onButtonClicker"
                 android:text="@string/dashboard_txtAlergia" />
         </LinearLayout>
@@ -45,14 +44,14 @@
             <Button
                 android:id="@+id/main_btn_rate"
                 android:drawableTop="@drawable/star_yellow"
-                style="@style/DashBoardButton"
+                style="@style/dashBoardButton"
                 android:onClick="onButtonClicker"
                 android:text="@string/dashboard_txtAvaliacao" />            
             
             <Button
                 android:id="@+id/main_btn_sugestion"
                 android:drawableTop="@drawable/lamp"
-                style="@style/DashBoardButton"
+                style="@style/dashBoardButton"
                 android:onClick="onButtonClicker"
                 android:text="@string/dashboard_txtSugestao" />
             
@@ -62,7 +61,7 @@
     </LinearLayout>
         	 <!-- PROPAGANDA   -->   
 	<com.google.ads.AdView android:id="@+id/adView"
-                 android:layout_width="fill_parent"
+                 android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:background="@android:color/transparent"
                  ads:adUnitId="@string/ADMOB_PUBLISHER_ID"

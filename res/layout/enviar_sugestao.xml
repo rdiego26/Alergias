@@ -3,11 +3,10 @@
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/radial_gradient" 
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal"
-    >
-    <!-- android:background="@drawable/linearlayout_background" -->
+    style="@style/defaultBackground">
+
 
     <LinearLayout android:id="@+id/cabecalho"
         android:layout_width="fill_parent"
@@ -20,9 +19,7 @@
 	        style="@style/cabecalho"
 	        android:text="@string/lbl_sugestao" />
 	</LinearLayout>    
-    
-    
-    
+
 
 	<LinearLayout  
 	    android:id="@+id/rodape"
@@ -59,7 +56,7 @@
 		            android:id="@+id/enviar_sugestao_txtMensagemSugestao"
 		            android:layout_width="wrap_content"
 		            android:layout_height="fill_parent"
-		            android:layout_gravity="left"
+		            android:layout_gravity="center_horizontal"
 		            android:ems="10"
 		            android:lines="10"
 		            android:width="350sp"
@@ -68,13 +65,10 @@
 		    
 				<Button 
 				    android:id="@+id/enviar_sugestao_btn_enviarSugestao"
-			        android:layout_height="wrap_content"
-			        android:layout_width="wrap_content"
-			        android:text="@string/lbl_btn_sugestao"		
+			        android:text="@string/lbl_btn_sugestao"
         	        android:clickable="true"
         			android:onClick="trataBotaoSugestao"
-        			android:layout_gravity="right"
-        			style="@style/botao"	    
+        			style="@style/botao"
 				    />
 	
 			</LinearLayout>

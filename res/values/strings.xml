@@ -15,11 +15,13 @@
 	
     <!--  Cadastro de Alergia [INICIO]-->
     <string name="lbl_nome_cadastro_alergia">Alergia: *</string>
-	<string name="lbl_nome_cadastro_obs">Obs: </string>
+    <string name="place_holder_alergia">Alergia</string>
+	<string name="place_holder_obs">Obs</string>
 	<!-- Cadastro de Alergia [FIM]-->
    
     <!--  Cadastro de Categoria [INICIO]-->
-   	<string name="lbl_nome_categoria">Categoria: *</string>
+    <string name="lbl_nome_categoria">CATEGORIA</string>
+    <string name="place_holder_nome_categoria">Categoria</string>
     <!--  Cadastro de Categoria [FIM]-->   
       
 	<!--  Menu da tela principal [INICIO]-->      

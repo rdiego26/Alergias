@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/linearlayout_background">
+   style="@style/detailItemList">
 
     <TextView 
-        android:text="@string/lbl_nome_categoria"
+        android:text="@string/place_holder_nome_categoria"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         />    
@@ -15,34 +12,24 @@
         android:id="@+id/detalhes_alergia_sp_categoria"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:prompt="@string/lbl_nome_categoria"
+		android:prompt="@string/place_holder_nome_categoria"
 		style="@style/spinner"
         />    
-    
-    <TextView 
-        android:text="@string/lbl_nome_cadastro_alergia"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
-    
+
     <EditText 
         	android:id="@+id/detalhes_alergia_txtNomeAlergia"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:inputType="text"
+        android:hint="@string/place_holder_alergia"
         />
- 
-    <TextView 
-        android:text="@string/lbl_nome_cadastro_obs"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
-    
+
     <EditText 
         	android:id="@+id/detalhes_alergia_txtObsAlergia"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:inputType="text"
+            android:hint="@string/place_holder_obs"
         />
 
     <Button 

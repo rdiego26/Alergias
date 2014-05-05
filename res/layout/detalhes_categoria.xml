@@ -2,20 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/linearlayout_background">
+    android:orientation="vertical"
+    style="@style/defaultBackground">
 
-    <TextView 
-        android:text="@string/lbl_nome_categoria"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
-    
     <EditText 
         	android:id="@+id/detalhes_categoria_txtNomeCategoria"
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content"
         	android:inputType="text"
+            android:hint="@string/place_holder_nome_categoria"
+            style="@style/inputStyle"
         />
     
     <Button 

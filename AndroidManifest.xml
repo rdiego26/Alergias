@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="info.diegoramos.alergiass"
-    android:versionCode="9"
-    android:versionName="1.8"
+    android:versionCode="10"
+    android:versionName="1.9"
      >
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="13" />
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         
-        <!-- TEMA -->
+        <!-- ACTIVITIES -->
         <activity android:name="alergias.activity.CadastrarAlergia"></activity>
         <activity android:name="alergias.activity.ListarAlergia"></activity>
         <activity android:name="alergias.activity.DetalhesAlergia"></activity>

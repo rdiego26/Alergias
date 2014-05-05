@@ -11,20 +11,27 @@ import android.widget.Toast;
  */
 public class validacoes {
 
-	final static String msg_campo = getString(R.string.lbl_campo);
-	final static String msg_obrigatorio = getString(R.string.lbl_obrigatorio);
+	private String msg_campo;
+	private String msg_obrigatorio;
+    private StringBuilder msg;
 	
 	public final boolean isNull(String nome_campo, Object objeto, int duracao, Context ctx)
 	{
 		if(objeto.toString().trim().equalsIgnoreCase("") || objeto.toString().trim().equalsIgnoreCase(null) || objeto.toString().trim().equals(null))
 		{
+            msg_campo = ctx.getString(R.string.lbl_campo);
+            msg_obrigatorio = ctx.getString(R.string.lbl_obrigatorio);
+            msg = new StringBuilder(msg_campo).append(" ")
+                    .append(nome_campo).append(" ")
+                    .append(msg_obrigatorio);
+
 			if(duracao > 1)
 			{
-				Toast.makeText(ctx, msg_campo + " " + nome_campo + " " + msg_obrigatorio, Toast.LENGTH_LONG).show();
+				Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
 			}
 			else
 			{
-				Toast.makeText(ctx, msg_campo + " " + nome_campo + " " + msg_obrigatorio, Toast.LENGTH_SHORT).show();
+				Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
 			}
 				return true;
 		}
@@ -34,7 +41,4 @@ public class validacoes {
 		}
 	}
 
-	private static String getString(int lblSucessoCadastroAlergia) {
-		return null;
-	}
 }

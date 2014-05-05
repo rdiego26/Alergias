@@ -3,17 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/radial_gradient">
-    
-    
-    <TextView 
-		android:text="@string/lbl_nome_categoria"
-		style="@style/textFont"
-	/>
-    
-   <EditText 
+    android:background="#ff4b8cc5">
+
+   <EditText
        android:id="@+id/cad_categoria_txt_nome_categoria"
        android:inputType="textCapWords"
+       android:hint="@string/place_holder_nome_categoria"
        style="@style/inputStyle"
        />
   
@@ -21,6 +16,7 @@
        android:text="@string/lbl_btn_cadastro"
        android:id="@+id/cad_categoria_btn_cadastrar"
        style="@style/botao"
+        android:onClick="cadastrar"
        />
     
     
