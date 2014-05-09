@@ -34,10 +34,13 @@ public class EnviarSugestao extends Activity
 	 * @param vw(Tela)
 	 */
 	public void trataBotaoSugestao(View vw) {
-		String assunto = new String();
+		StringBuilder assunto = new StringBuilder();
 		String destinatario;
 		
-		assunto = getString(R.string.lbl_sugestao) + " - " + getString(R.string.app_name);	
+		assunto.append( getString(R.string.lbl_sugestao) )
+                .append(" - ")
+                .append( getString(R.string.app_name) );
+
 		destinatario  = getString(R.string.email_autor);
 		
 		//Mapeia o objeto que contem o texto
@@ -45,10 +48,10 @@ public class EnviarSugestao extends Activity
 		
 		//Configurando o  objeto para envio de email
 		emailIntent.setType("plain/text");
-		emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, assunto);
+		emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, assunto.toString());
 		emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{destinatario});
 		emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, txtMensagem.getText().toString());
-		startActivity(Intent.createChooser(emailIntent, assunto));
+		startActivity(Intent.createChooser(emailIntent, assunto.toString()));
 		finish();		
 	}
 	
