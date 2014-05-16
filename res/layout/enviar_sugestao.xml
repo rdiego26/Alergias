@@ -61,6 +61,7 @@
 		            android:lines="10"
 		            android:width="350sp"
 		            android:inputType="textMultiLine"
+                    style="@style/defaultBackground"
 		            />
 		    
 				<Button 

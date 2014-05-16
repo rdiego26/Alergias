@@ -3,5 +3,5 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/button_shadow" />
     <item android:drawable="@drawable/button_shape"
-          android:bottom="6dp" />
+          android:bottom="5dp" />
 </layer-list>

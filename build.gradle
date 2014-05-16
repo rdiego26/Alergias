@@ -19,7 +19,6 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            //java.srcDirs = ['src']
             java.srcDirs = ['src/main/java', 'src-gen/main/java']
             resources.srcDirs = ['src']
             aidl.srcDirs = ['src']
@@ -42,3 +41,4 @@ android {
     }
 
 }
+

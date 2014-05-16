@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff4b8cc5">
+    style="@style/simpleBody">
 
    <EditText
        android:id="@+id/cad_categoria_txt_nome_categoria"

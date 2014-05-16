@@ -4,7 +4,7 @@
     <item 
         android:id="@+id/menu_listar_alergia_cadastrar"
         android:title="@string/lbl_menu_cad_cadastrar"
-		android:icon="@drawable/add"
+		android:icon="@drawable/vial_pills"
         />     
 
 </menu>
