@@ -1,4 +1,4 @@
-package alergias.Utils;
+package alergias.util;
 
 import info.diegoramos.alergiass.R;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.Toast;
  * @author Diego Ramos <rdiego26@gmail>
  * 
  */
-public class validacoes {
+public class Validacoes {
 
 	private String msg_campo;
 	private String msg_obrigatorio;

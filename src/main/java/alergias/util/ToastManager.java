@@ -1,4 +1,4 @@
-package alergias.Utils;
+package alergias.util;
 
 import info.diegoramos.alergiass.R;
 import android.content.Context;

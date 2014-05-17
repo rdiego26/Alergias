@@ -17,19 +17,19 @@ import android.util.Log;
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class DAOCategoria {
+public class DAOCategory {
 
 	//Nome dos Campos da Tabela
 	private static final String[] FIELD_CATEGORIA = {"id_categoria", "nome"};
 	protected SQLiteDatabase db;
-	private static DAOCategoria instance = new DAOCategoria(); /** Singleton **/	
+	private static DAOCategory instance = new DAOCategory(); /** Singleton **/
 	
 	/**
 	 * Método criado para trabalhar com Singleton
 	 * @param context
-	 * @return Instância de DAOCategoria
+	 * @return Instância de DAOCategory
 	 */
-	public static DAOCategoria getInstance(Context context)
+	public static DAOCategory getInstance(Context context)
 	{
 		if(instance.db == null || !instance.db.isOpen())
 		{
@@ -65,7 +65,7 @@ public class DAOCategoria {
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			Log.e("DAOCategoria->save()", e.getMessage());
+			Log.e("DAOCategory->save()", e.getMessage());
 		}
 		finally
 		{
@@ -270,7 +270,7 @@ public class DAOCategoria {
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			Log.i("DAOCategoria->Update", e.getMessage());
+			Log.i("DAOCategory->Update", e.getMessage());
 			retorno = -1;
 		}
 		finally

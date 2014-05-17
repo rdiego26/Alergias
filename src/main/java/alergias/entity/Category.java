@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class Categoria implements Serializable{
+public class Category implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private Integer id_categoria;
@@ -31,17 +31,17 @@ public class Categoria implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Categoria [id_categoria=" + id_categoria + ", nome=" + nome
+		return "Category [id_categoria=" + id_categoria + ", nome=" + nome
 				+ "]";
 	}
 	
 	//CONSTRUTORES
-	public Categoria(Integer id_categoria, String nome) {
+	public Category(Integer id_categoria, String nome) {
 		super();
 		this.id_categoria = id_categoria;
 		this.nome = nome;
 	}
-	public Categoria() {
+	public Category() {
 		super();
 	}
 	
