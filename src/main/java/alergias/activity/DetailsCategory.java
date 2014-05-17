@@ -28,7 +28,7 @@ public class DetailsCategory extends Activity
     private EditText edtName;
 
 	//Messages
-    private String DUPLICATE_CATEGORY_MSG, SUCCESS_REGISTER_MSG, FAIL_REGISTER_MSG;
+    private String DUPLICATE_CATEGORY_MSG;
     private String SUCCESS_UPDATE_MSG, FAIL_UPDATE_MSG;
     private String SUCCESS_DELETE_MSG, FAIL_DELETE_MSG;
 
