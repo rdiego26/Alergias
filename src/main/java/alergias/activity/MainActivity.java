@@ -13,7 +13,7 @@ import android.view.View;
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class TelaInicial extends Activity {
+public class MainActivity extends Activity {
 
 	String msgFalhaMarket;
 	
@@ -35,11 +35,11 @@ public class TelaInicial extends Activity {
     	switch (vw.getId())
     	{
 		case R.id.main_btn_category:
-				startActivity(new Intent(getApplicationContext(), ListarCategoria.class) );
+				startActivity(new Intent(getApplicationContext(), ListCategory.class) );
 				break;
 			
     	case R.id.main_btn_allergie:
-    			startActivity(new Intent(getApplicationContext(), ListarAlergia.class));
+    			startActivity(new Intent(getApplicationContext(), ListAlergie.class));
     			break;
 
     	case R.id.main_btn_rate:

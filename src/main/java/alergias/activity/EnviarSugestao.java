@@ -26,7 +26,7 @@ public class EnviarSugestao extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.enviar_sugestao);
+        setContentView(R.layout.send_suggestion);
     }
 	
 	/**

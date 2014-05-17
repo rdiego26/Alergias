@@ -1,12 +1,12 @@
 package alergias.activity;
 
 import alergias.entity.Category;
+import alergias.persistence.DAOAllergy;
 import alergias.util.Validation;
 import info.diegoramos.alergiass.R;
 import alergias.util.ToastManager;
-import alergias.componentes.CategoriaSpinnerAdapter;
+import alergias.components.CategoriaSpinnerAdapter;
 import alergias.entity.Alergia;
-import alergias.persistence.DAOAlergia;
 import alergias.persistence.DAOCategory;
 import android.app.Activity;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ import android.widget.Spinner;
  */
 public class DetalhesAlergia extends Activity{
 
-	DAOAlergia daoA;
+	DAOAllergy daoA;
 	DAOCategory daoC;
 	Alergia a;
 	
@@ -146,10 +146,10 @@ public class DetalhesAlergia extends Activity{
 	
 	/**
     * Responsável por efetuar a atualização do objeto Alergia
-    * @param vw ( ListarAlergia )
+    * @param vw ( ListAlergie )
     */    	
 	public void update(View vw) {
-		daoA = DAOAlergia.getInstance(this);
+		daoA = DAOAllergy.getInstance(this);
 		
 		a.setId_categoria( daoC.getByName(getCategoriaSpinner().getNome()).getId_categoria() );
 		a.setNome(edtNome.getText().toString());
@@ -189,7 +189,7 @@ public class DetalhesAlergia extends Activity{
 	}
 
     private void delete() {
-        daoA = DAOAlergia.getInstance(this);
+        daoA = DAOAllergy.getInstance(this);
 
         msg_falha_exclusao =  getString(R.string.lbl_falha_exclusao_alergia);
         msg_sucesso_exclusao = getString(R.string.lbl_sucesso_exclusao_alergia);

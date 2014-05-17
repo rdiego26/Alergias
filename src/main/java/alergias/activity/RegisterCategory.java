@@ -29,7 +29,7 @@ public class RegisterCategory extends Activity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.cad_categoria);
+		setContentView(R.layout.register_category);
 	}
 
     /**

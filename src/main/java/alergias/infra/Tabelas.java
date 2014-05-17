@@ -1,4 +1,4 @@
-package alergias.banco;
+package alergias.infra;
 
 public class Tabelas {
 

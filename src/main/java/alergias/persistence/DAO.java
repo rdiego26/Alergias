@@ -1,6 +1,6 @@
 package alergias.persistence;
 
-import alergias.banco.Tabelas;
+import alergias.infra.Tabelas;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

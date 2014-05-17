@@ -89,7 +89,7 @@ public class DetailsCategory extends Activity
     
     /**
      * Validate and Update Category
-     * @param vw ( ListarCategoria )
+     * @param vw ( ListCategory )
      */    
     public void update(View vw) {
     	daoC = DAOCategory.getInstance(this);

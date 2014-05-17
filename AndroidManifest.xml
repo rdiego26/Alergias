@@ -20,7 +20,7 @@
 
 
         <activity
-            android:name="alergias.activity.TelaInicial"
+            android:name="alergias.activity.MainActivity"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
             <intent-filter>
@@ -31,11 +31,11 @@
         </activity>
         
         <!-- ACTIVITIES -->
-        <activity android:name="alergias.activity.CadastrarAlergia"></activity>
-        <activity android:name="alergias.activity.ListarAlergia"></activity>
+        <activity android:name="alergias.activity.RegisterAllergy"></activity>
+        <activity android:name="alergias.activity.ListAlergie"></activity>
         <activity android:name="alergias.activity.DetalhesAlergia"></activity>
         <activity android:name="alergias.activity.RegisterCategory"></activity>
-        <activity android:name="alergias.activity.ListarCategoria"></activity>
+        <activity android:name="alergias.activity.ListCategory"></activity>
         <activity android:name="alergias.activity.DetailsCategory"></activity>
         <activity android:name="alergias.activity.EnviarSugestao"></activity>
 		

@@ -10,7 +10,7 @@ Requisitos
 ----------
 Para rodar o Alergias você vai precisar de:
 
- - Eclipse IDE;
+ - Android Studio;
  - SDK Android e com uma AVD para o Android 2.2 no mínimo.
 
 Powered By

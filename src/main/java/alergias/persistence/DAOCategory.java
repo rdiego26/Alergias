@@ -210,8 +210,8 @@ public class DAOCategory {
 		int retorno = 0;
 		
 		//Valida a consist�ncia do banco
-		DAOAlergia DAOA;
-		DAOA = DAOAlergia.getInstance(context);
+		DAOAllergy DAOA;
+		DAOA = DAOAllergy.getInstance(context);
 		
 		List<Alergia> lista;
 		

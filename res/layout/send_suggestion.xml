@@ -52,7 +52,7 @@
 				android:layout_gravity="center_horizontal"
 				>
 
-		        <alergias.componentes.LineEditText
+		        <alergias.components.LineEditText
 		            android:id="@+id/enviar_sugestao_txtMensagemSugestao"
 		            android:layout_width="wrap_content"
 		            android:layout_height="fill_parent"

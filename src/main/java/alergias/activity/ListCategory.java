@@ -19,56 +19,54 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 /**
  * 
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class ListarCategoria extends Activity
+public class ListCategory extends Activity
 {
 
-	DAOCategory DAOC;
-	String conteudo[];
-	List<Category> lista;
-	private ListView listV;
-	private int posicao;
+	private DAOCategory DAOC;
+    private String content[];
 
-	//Mensagens
-	String msg_lista_categoria_vazia;
-	String msgError = null;
-	String msgSucess = null;
+    private List<Category> listCategory;
+    private ListView listView;
+	private int position;
+
+	//Messages
+    private String EMPTY_LIST_MSG;
+    private String ERROR_MSG = null;
+    private String SUCCESS_MSG = null;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.listar_categoria);
+		setContentView(R.layout.list_category);
 		
-		listV = (ListView) findViewById(R.id.listar_categoria_lista);
+		listView = (ListView) findViewById(R.id.listar_categoria_lista);
 		
 		//Simple tap in ListView item
-		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View wv, int position,
-					long id) {
-				Category c = (Category) lista.get(position);
-    			Intent intent = new Intent(getApplicationContext(), DetailsCategory.class);
-    			Bundle param = new Bundle();
-    			
-    			param.putSerializable("_object_categoria", c);
-    			intent.putExtras(param);
-    			startActivity(intent);
-			}
-		});		
+            @Override
+            public void onItemClick(AdapterView<?> parent, View wv, int position, long id) {
+                Category category = (Category) listCategory.get(position);
+                Intent intent = new Intent(getApplicationContext(), DetailsCategory.class);
+                Bundle param = new Bundle();
+
+                param.putSerializable("_object_categoria", category);
+                intent.putExtras(param);
+                startActivity(intent);
+            }
+        });
 		
-		DAOC = DAOCategory.getInstance(this); // trabalhando com SINGLETON
+		DAOC = DAOCategory.getInstance(this); // SINGLETON
 		
-		registerForContextMenu(listV);
+		registerForContextMenu(listView);
 		loadList();
 	}
 	
@@ -93,41 +91,37 @@ public class ListarCategoria extends Activity
 	}
 	
 	/**
-	 * Preenche a ListView
+	 * populate ListView
 	 */
 	public void loadList()
 	{
 		
 		ListView lv = (ListView) findViewById(R.id.listar_categoria_lista);
-		lista = DAOC.findAll();
-		
-		
-		//Setando Mensagens
-		msg_lista_categoria_vazia = this.getString(R.string.lbl_cabecalho_lst_vazia_categoria);
+		listCategory = DAOC.findAll();
+
+		EMPTY_LIST_MSG = this.getString(R.string.lbl_cabecalho_lst_vazia_categoria);
 		
 		StringBuilder sb = new StringBuilder();
 
 		
-		if(lista.size() > 0)
+		if(listCategory.size() > 0)
 		{
-			for(Category C : lista)
+			for(Category C : listCategory)
 			{
 				sb.append(C.getNome()  + "<>"); //TAG "<>" utilizada para quebra os nomes
 			}
-			conteudo = sb.toString().split("<>");
-			ArrayAdapter<String> addCategoria = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
+			content = sb.toString().split("<>");
+			ArrayAdapter<String> addCategoria = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, content);
 			
 			lv.setAdapter(addCategoria);
 		}
 		else
 		{
-			Toast.makeText(getApplicationContext(), msg_lista_categoria_vazia, Toast.LENGTH_SHORT).show();
-
+            ToastManager.show(getApplicationContext(), EMPTY_LIST_MSG, 0);
 		}
 	
 	}	
 
-    //Colocando o menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -142,15 +136,14 @@ public class ListarCategoria extends Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-    	// TODO Auto-generated method stub
-    	Intent intencao;
+    	Intent intent;
     	
     	//Verificando qual item do menu foi selecionado
     	switch (item.getItemId())
     	{
     		case R.id.menu_listar_categoria_cadastrar:
-    			intencao = new Intent(this, RegisterCategory.class);
-    			startActivity(intencao);
+    			intent = new Intent(this, RegisterCategory.class);
+    			startActivity(intent);
     			return true;
     	
     		default:
@@ -160,7 +153,6 @@ public class ListarCategoria extends Activity
     	
     }
     
-    //ContextMenu
     @Override
     public void onCreateContextMenu(ContextMenu menu, View vw, ContextMenuInfo menuInfo) {
     	super.onCreateContextMenu(menu, vw, menuInfo);
@@ -168,7 +160,7 @@ public class ListarCategoria extends Activity
     	
     	/* Position selected on ContextMenu */
     	AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-    	posicao = info.position;
+    	position = info.position;
     	
     }
     
@@ -183,21 +175,21 @@ public class ListarCategoria extends Activity
     		break;
     	
     	case R.id.context_menu_delete:
-    			category = (Category) lista.get(posicao);
-    			msgError = this.getString(R.string.lbl_falha_exclusao_categoria);
-    			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_categoria);
+    			category = (Category) listCategory.get(position);
+    			ERROR_MSG = this.getString(R.string.lbl_falha_exclusao_categoria);
+    			SUCCESS_MSG = this.getString(R.string.lbl_sucesso_exclusao_categoria);
     			
     			if ( DAOC.delete(category.getId_categoria(), getApplicationContext()) == -1 ) {
-    				ToastManager.show(getApplicationContext(), msgError, 2);
+    				ToastManager.show(getApplicationContext(), ERROR_MSG, 2);
     			}
     			else {
-    				ToastManager.show(getApplicationContext(), msgSucess, 0);
+    				ToastManager.show(getApplicationContext(), SUCCESS_MSG, 0);
     				loadList();
     			}
     			
     			break;
     	case R.id.context_menu_update:
-    			category = (Category) lista.get(posicao);
+    			category = (Category) listCategory.get(position);
     			Intent intent = new Intent(getApplicationContext(), DetailsCategory.class);
     			Bundle param = new Bundle();
     			

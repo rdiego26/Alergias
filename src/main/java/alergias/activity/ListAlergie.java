@@ -1,10 +1,10 @@
 package alergias.activity;
 
 
+import alergias.persistence.DAOAllergy;
 import info.diegoramos.alergiass.R;
 import alergias.util.ToastManager;
 import alergias.entity.Alergia;
-import alergias.persistence.DAOAlergia;
 
 import java.util.List;
 
@@ -26,24 +26,24 @@ import android.widget.ListView;
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class ListarAlergia extends Activity
+public class ListAlergie extends Activity
 {
 
-	DAOAlergia daoA;
-	String conteudo[];
-	List<Alergia> lista;
-	private ListView listV;
-	private int posicao;	
+    private DAOAllergy daoA;
+    private String content[];
 
-	//Mensagens
-	String msg_lista_alergia_vazia;
-	String msgError = null;
-	String msgSucess = null;	
+    private List<Alergia> listAllergy;
+	private ListView listV;
+	private int position;
+
+	//Messages
+    private String EMPTY_LIST_MSG;
+    private String ERROR_MSG = null;
+    private String SUCCESS_MSG = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listar_alergia);
 		
@@ -53,21 +53,18 @@ public class ListarAlergia extends Activity
 		listV.setOnItemClickListener(new AdapterView.OnItemClickListener()  {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View wv, int position,
-					long id) {
-				Alergia a = (Alergia) lista.get(position);
+			public void onItemClick(AdapterView<?> parent, View wv, int position, long id) {
+				Alergia allergy = (Alergia) listAllergy.get(position);
     			Intent intent = new Intent(getApplicationContext(), DetalhesAlergia.class);
     			Bundle param = new Bundle();
     			
-    			param.putSerializable("_object_alergia", a);
+    			param.putSerializable("_object_alergia", allergy);
     			intent.putExtras(param);
     			startActivity(intent);
 			}
 		});			
 		
-		
-		
-		daoA = DAOAlergia.getInstance(this); // trabalhando com SINGLETON
+		daoA = DAOAllergy.getInstance(this); //SINGLETON
 		
 		registerForContextMenu(listV);
 		loadList();
@@ -101,30 +98,27 @@ public class ListarAlergia extends Activity
 	{
 		
 		ListView lv = (ListView) findViewById(R.id.listar_alergia_lista);
-		lista = daoA.findAll();
+		listAllergy = daoA.findAll();
 		
 		//Setando Mensagens
-		msg_lista_alergia_vazia = this.getString(R.string.lbl_cabecalho_lst_vazia_alergia);		
+		EMPTY_LIST_MSG = this.getString(R.string.lbl_cabecalho_lst_vazia_alergia);
 		
 		
 		StringBuilder sb = new StringBuilder();
 
-		if(lista.size() > 0)
+		if(listAllergy.size() > 0)
 		{
-			for(Alergia A : lista)
+			for(Alergia A : listAllergy)
 			{
 				sb.append(A.getNome()  + "<>"); //TAG "<>" utilizada para quebra os nomes
 			}
-			conteudo = sb.toString().split("<>");
-			ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
+			content = sb.toString().split("<>");
+			ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, content);
 			lv.setAdapter(addAlergia);
 		}
 		else
 		{
-			conteudo = sb.toString().split("");
-            ArrayAdapter<String> addAlergia = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conteudo);
-			lv.setAdapter(addAlergia);
-			ToastManager.show(getApplicationContext(), msg_lista_alergia_vazia, 0);
+			ToastManager.show(getApplicationContext(), EMPTY_LIST_MSG, 0);
 		}
 	
 	}
@@ -149,7 +143,7 @@ public class ListarAlergia extends Activity
     	switch (item.getItemId())
     	{
     		case R.id.menu_listar_alergia_cadastrar:
-    			intencao = new Intent(this, CadastrarAlergia.class);
+    			intencao = new Intent(this, RegisterAllergy.class);
     			startActivity(intencao);
     			return true;
     	
@@ -168,7 +162,7 @@ public class ListarAlergia extends Activity
     	
     	/* Position selected on ContextMenu */
     	AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-    	posicao = info.position;
+    	position = info.position;
     	
     }
     
@@ -179,25 +173,25 @@ public class ListarAlergia extends Activity
     	switch (item.getItemId()) {
     	
     	case R.id.context_menu_register:
-    			startActivity(new Intent(this, CadastrarAlergia.class));
+    			startActivity(new Intent(this, RegisterAllergy.class));
     		break;
     	
     	case R.id.context_menu_delete:
-    			alergia = (Alergia) lista.get(posicao);
-    			msgError =  getString(R.string.lbl_falha_exclusao_alergia);
-    			msgSucess = getString(R.string.lbl_sucesso_exclusao_alergia);
+    			alergia = (Alergia) listAllergy.get(position);
+    			ERROR_MSG =  getString(R.string.lbl_falha_exclusao_alergia);
+    			SUCCESS_MSG = getString(R.string.lbl_sucesso_exclusao_alergia);
     			
     			if ( daoA.delete(alergia.getId_alergia()) == -1 ) {
-    				ToastManager.show(getApplicationContext(), msgError, 2);
+    				ToastManager.show(getApplicationContext(), ERROR_MSG, 2);
     			}
     			else {
-    				ToastManager.show(getApplicationContext(), msgSucess, 0);
+    				ToastManager.show(getApplicationContext(), SUCCESS_MSG, 0);
                     loadList();
     			}
     			
     			break;
     	case R.id.context_menu_update:
-    			alergia = (Alergia) lista.get(posicao);
+    			alergia = (Alergia) listAllergy.get(position);
     			Intent intent = new Intent(getApplicationContext(), DetalhesAlergia.class);
     			Bundle param = new Bundle();
     			
@@ -213,7 +207,5 @@ public class ListarAlergia extends Activity
     	
     	return true;
     }        
-    
-    
-    
+
 }

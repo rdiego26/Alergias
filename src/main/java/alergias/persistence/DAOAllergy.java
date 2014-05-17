@@ -16,21 +16,21 @@ import android.util.Log;
  * @author Diego Ramos <rdiego26@gmail>
  *
  */
-public class DAOAlergia {
+public class DAOAllergy {
 
 	//Nome dos Campos da Tabela
 	private static final String[] FIELD_ALERGIA = {"id_alergia", "nome", "obs", "id_categoria"};
 	protected SQLiteDatabase db;
-	private static DAOAlergia instance = new DAOAlergia(); // Padr�o Singleton	
+	private static DAOAllergy instance = new DAOAllergy(); // Padr�o Singleton
 	
 	
 	
 	/**
 	 * Método criado para trabalhar com Singleton
 	 * @param context
-	 * @return Instância para DAOAlergia
+	 * @return Instância para DAOAllergy
 	 */
-	public static DAOAlergia getInstance(Context context)
+	public static DAOAllergy getInstance(Context context)
 	{
 		if(instance.db == null || !instance.db.isOpen())
 		{
@@ -67,7 +67,7 @@ public class DAOAlergia {
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			Log.e("DAOAlergia->save()", e.getMessage());
+			Log.e("DAOAllergy->save()", e.getMessage());
 		}
 		finally
 		{

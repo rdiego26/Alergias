@@ -1,4 +1,4 @@
-package alergias.componentes;
+package alergias.components;
 
 import info.diegoramos.alergiass.R;
 import alergias.entity.Category;
