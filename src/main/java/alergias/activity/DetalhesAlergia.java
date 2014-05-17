@@ -1,15 +1,14 @@
 package alergias.activity;
 
+import alergias.entity.Category;
+import alergias.util.Validation;
 import info.diegoramos.alergiass.R;
-import alergias.Utils.ToastManager;
-import alergias.Utils.validacoes;
+import alergias.util.ToastManager;
 import alergias.componentes.CategoriaSpinnerAdapter;
 import alergias.entity.Alergia;
-import alergias.entity.Categoria;
 import alergias.persistence.DAOAlergia;
-import alergias.persistence.DAOCategoria;
+import alergias.persistence.DAOCategory;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,7 +25,7 @@ import android.widget.Spinner;
 public class DetalhesAlergia extends Activity{
 
 	DAOAlergia daoA;
-	DAOCategoria daoC;
+	DAOCategory daoC;
 	Alergia a;
 	
 	//Componentes da tela
@@ -98,7 +97,7 @@ public class DetalhesAlergia extends Activity{
 
 
     /**
-     * Responsável por obter um objeto Categoria serializado e setar os valores na tela
+     * Responsável por obter um objeto Category serializado e setar os valores na tela
      */    
     private void loadContent() {
 		//obtain client via Extra
@@ -106,7 +105,7 @@ public class DetalhesAlergia extends Activity{
 		a = (Alergia) extras.getSerializable("_object_alergia");
 		
 		if ( a != null) {
-			daoC = DAOCategoria.getInstance(this);
+			daoC = DAOCategory.getInstance(this);
 			
 			setCategoriaSpinner( daoC.getById(a.getId_categoria()));
 			edtNome.setText(a.getNome());
@@ -115,17 +114,17 @@ public class DetalhesAlergia extends Activity{
     }
     
     /**
-     * Responsável por preencher o Spinner de Categoria
+     * Responsável por preencher o Spinner de Category
      */
     private void loadCategoriaSpinner() {
     	spiCategoria.setAdapter(CategoriaSpinnerAdapter.getAdapter(this));
     }
     /**
-     * Recebe um objeto Categoria e seta este no Spinner Categoria
+     * Recebe um objeto Category e seta este no Spinner Category
      * @param cat
      */
     
-	private void setCategoriaSpinner(Categoria cat) {
+	private void setCategoriaSpinner(Category cat) {
 		for (int i = 0; i < spiCategoria.getCount(); i++) {  
             if (spiCategoria.getItemAtPosition(i).toString()
             		.replace("{nomeCategoria=", "").replace("}", "")
@@ -136,12 +135,12 @@ public class DetalhesAlergia extends Activity{
 	}
 
 	/**
-	 * Responsável por obter o objeto selecionado no Spinner Categoria
+	 * Responsável por obter o objeto selecionado no Spinner Category
 	 */
-	private Categoria getCategoriaSpinner() {
-		Categoria categoria = daoC.getByName( spiCategoria.getSelectedItem().toString().replace("{nomeCategoria=", "").replace("}", "") );
+	private Category getCategoriaSpinner() {
+		Category category = daoC.getByName( spiCategoria.getSelectedItem().toString().replace("{nomeCategoria=", "").replace("}", "") );
 		
-		return categoria;
+		return category;
 	}
 
 	
@@ -157,7 +156,7 @@ public class DetalhesAlergia extends Activity{
 		a.setObs(edtObs.getText().toString());
 		
 		
-		validacoes validate = new validacoes();				
+		Validation validate = new Validation();
 		boolean aux1;
 		
 		aux1 = validate.isNull("Alergia ", a.getNome(), 1, getApplicationContext());		

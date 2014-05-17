@@ -1,7 +1,7 @@
 package alergias.persistence;
 
 import alergias.entity.Alergia;
-import alergias.entity.Categoria;
+import alergias.entity.Category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +39,11 @@ public class DAOCategory {
 	}
 	
 	/**
-	 * Persiste uma Categoria
-	 * @param categoria
+	 * Persiste uma Category
+	 * @param category
 	 * @return int, -1 para falhas
 	 */
-	public int save(Categoria categoria)
+	public int save(Category category)
 	{
 		int retorno = -1; //Criado pois o INSERT sempre retorna o id, depois de criado.
 		
@@ -55,7 +55,7 @@ public class DAOCategory {
 			//Setando valores para os campos
 			
 			//cv.put(FIELD_CATEGORIA[0], C.getId_categoria()); //id_categoria
-			cv.put(FIELD_CATEGORIA[1], categoria.getNome()); //nome
+			cv.put(FIELD_CATEGORIA[1], category.getNome()); //nome
 			
 			//Grava efetivamente os dados
 			retorno = (int) db.insert(DAO.TBL_CATEGORIA, null, cv);
@@ -76,34 +76,34 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Constroe uma Categoria através de Cursor ( consulta )
+	 * Constroe uma Category através de Cursor ( consulta )
 	 * @param cursor
-	 * @return Categoria
+	 * @return Category
 	 */
-	private Categoria categoriaFactory(Cursor cursor)
+	private Category categoriaFactory(Cursor cursor)
 	{
 		Integer idCategoria = cursor.getInt(cursor.getColumnIndex(FIELD_CATEGORIA[0]));
 		String  nome     =  cursor.getString(cursor.getColumnIndex(FIELD_CATEGORIA[1]));
 
-		Categoria C = new Categoria(idCategoria, nome);//Cria objeto com os dados obtidos
+		Category C = new Category(idCategoria, nome);//Cria objeto com os dados obtidos
 				
 		return C;
 	}
 	
 	/**
 	 * Retorna todas Categorias cadastradas, ordenadas pelo nome
-	 * @return List<Categoria>
+	 * @return List<Category>
 	 */
-	public List<Categoria> findAll()
+	public List<Category> findAll()
 	{
-		List<Categoria> lista = new ArrayList<Categoria>();
+		List<Category> lista = new ArrayList<Category>();
 		
 		Cursor c = db.query(DAO.TBL_CATEGORIA, null, null, null, null, null, "nome ASC");
 		
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			Categoria C = categoriaFactory(c);
+			Category C = categoriaFactory(c);
 			
 			c.moveToNext();
 			lista.add(C);
@@ -125,7 +125,7 @@ public class DAOCategory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			Categoria C = categoriaFactory(c);
+			Category C = categoriaFactory(c);
 			
 			c.moveToNext();
 			lista.add(C.getNome());
@@ -148,7 +148,7 @@ public class DAOCategory {
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			Categoria C = categoriaFactory(c);
+			Category C = categoriaFactory(c);
 			
 			c.moveToNext();
 			lista.add(C.getId_categoria().toString());
@@ -158,18 +158,18 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Busca uma Categoria pelo id
+	 * Busca uma Category pelo id
 	 * @param idCategoria
-	 * @return Categoria
+	 * @return Category
 	 */
-	public Categoria buscar(int idCategoria)
+	public Category buscar(int idCategoria)
 	{
 		
 		Cursor c = db.query(DAO.TBL_CATEGORIA, null, FIELD_CATEGORIA[0] + " = " + idCategoria, null, null, null, null);
 		if(c.getCount() > 0)
 		{
 			c.moveToFirst();
-			Categoria C = categoriaFactory(c);
+			Category C = categoriaFactory(c);
 			c.close();
 			return C;
 		}
@@ -178,19 +178,19 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Busca Categoria pelo nome
-	 * @param categoria
-	 * @return Categoria
+	 * Busca Category pelo nome
+	 * @param category
+	 * @return Category
 	 */
-	public Categoria buscarNome(Categoria categoria)
+	public Category buscarNome(Category category)
 	{
 		
-		Cursor c = db.query(DAO.TBL_CATEGORIA, null, FIELD_CATEGORIA[1] + " = '" + categoria.getNome() + "'", null, null, null, null);
+		Cursor c = db.query(DAO.TBL_CATEGORIA, null, FIELD_CATEGORIA[1] + " = '" + category.getNome() + "'", null, null, null, null);
 
 		if(c.getCount() > 0)
 		{
 			c.moveToFirst();
-			Categoria ca = categoriaFactory(c);
+			Category ca = categoriaFactory(c);
 			c.close();
 			return ca;
 		}
@@ -199,7 +199,7 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Deleta uma Categoria
+	 * Deleta uma Category
 	 * @param idCategoria
 	 * @param context
 	 * @return -1 para falhas
@@ -216,7 +216,7 @@ public class DAOCategory {
 		List<Alergia> lista;
 		
 		lista = DAOA.buscarPorCategoria(idCategoria);
-		//Encontrou alguma Alergia que utilize a Categoria?
+		//Encontrou alguma Alergia que utilize a Category?
 		if(lista.size() > 0) //Aqui encontrou
 		{
 			retorno = -1;
@@ -246,11 +246,11 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Atualiza uma Categoria
-	 * @param categoria
+	 * Atualiza uma Category
+	 * @param category
 	 * @return -1 para falhas
 	 */
-	public int update(Categoria categoria)
+	public int update(Category category)
 	{
 		
 		int retorno = 0;
@@ -260,11 +260,11 @@ public class DAOCategory {
 			db.beginTransaction();
 			//Montando os dados
 			ContentValues cv = new ContentValues();
-			cv.put(FIELD_CATEGORIA[0], categoria.getId_categoria());
-			cv.put(FIELD_CATEGORIA[1], categoria.getNome());
+			cv.put(FIELD_CATEGORIA[0], category.getId_categoria());
+			cv.put(FIELD_CATEGORIA[1], category.getNome());
 
 			
-			db.update(DAO.TBL_CATEGORIA, cv, FIELD_CATEGORIA[0] + " = ?", new String[]{categoria.getId_categoria().toString()});
+			db.update(DAO.TBL_CATEGORIA, cv, FIELD_CATEGORIA[0] + " = ?", new String[]{category.getId_categoria().toString()});
 			db.setTransactionSuccessful();
 		}
 		catch (Exception e)
@@ -282,12 +282,12 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Busca Categoria pelo id
+	 * Busca Category pelo id
 	 * @param idCategoria
-	 * @return Categoria
+	 * @return Category
 	 */
-	public Categoria getById(int idCategoria) {
-		Categoria ct = null;
+	public Category getById(int idCategoria) {
+		Category ct = null;
 		Cursor c = db.query(DAO.TBL_CATEGORIA, null, FIELD_CATEGORIA[0] + " = " + String.valueOf(idCategoria), null, null, null, "nome ASC LIMIT 1");
 	
 		if(c.moveToFirst()){
@@ -303,25 +303,25 @@ public class DAOCategory {
 	}	
 	
 	/**
-	 * Busca Categoria pelo nome
+	 * Busca Category pelo nome
 	 * @param name
-	 * @return Categoria
+	 * @return Category
 	 */
-	public Categoria getByName(String name) {
-		Categoria categoria = null;
+	public Category getByName(String name) {
+		Category category = null;
 		
 		Cursor c = db.query(DAO.TBL_CATEGORIA, null, FIELD_CATEGORIA[1] + " = '" + name + "' ", null, null, null, "nome ASC LIMIT 1");
 	
 		if(c.moveToFirst()){
 
-			categoria = categoriaFactory(c);
+			category = categoriaFactory(c);
 			c.close();
 			
-			return categoria;			
+			return category;
 		}
 			c.close();
 		
-		return categoria;
+		return category;
 	}	
 	
 	

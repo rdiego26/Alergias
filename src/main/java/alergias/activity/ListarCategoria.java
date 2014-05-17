@@ -1,9 +1,9 @@
 package alergias.activity;
 
+import alergias.entity.Category;
 import info.diegoramos.alergiass.R;
-import alergias.Utils.ToastManager;
-import alergias.entity.Categoria;
-import alergias.persistence.DAOCategoria;
+import alergias.util.ToastManager;
+import alergias.persistence.DAOCategory;
 
 import java.util.List;
 
@@ -29,9 +29,9 @@ import android.widget.Toast;
 public class ListarCategoria extends Activity
 {
 
-	DAOCategoria DAOC;
+	DAOCategory DAOC;
 	String conteudo[];
-	List<Categoria> lista;
+	List<Category> lista;
 	private ListView listV;
 	private int posicao;
 
@@ -56,8 +56,8 @@ public class ListarCategoria extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> parent, View wv, int position,
 					long id) {
-				Categoria c = (Categoria) lista.get(position);
-    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+				Category c = (Category) lista.get(position);
+    			Intent intent = new Intent(getApplicationContext(), DetailsCategory.class);
     			Bundle param = new Bundle();
     			
     			param.putSerializable("_object_categoria", c);
@@ -66,7 +66,7 @@ public class ListarCategoria extends Activity
 			}
 		});		
 		
-		DAOC = DAOCategoria.getInstance(this); // trabalhando com SINGLETON
+		DAOC = DAOCategory.getInstance(this); // trabalhando com SINGLETON
 		
 		registerForContextMenu(listV);
 		loadList();
@@ -110,7 +110,7 @@ public class ListarCategoria extends Activity
 		
 		if(lista.size() > 0)
 		{
-			for(Categoria C : lista)
+			for(Category C : lista)
 			{
 				sb.append(C.getNome()  + "<>"); //TAG "<>" utilizada para quebra os nomes
 			}
@@ -149,7 +149,7 @@ public class ListarCategoria extends Activity
     	switch (item.getItemId())
     	{
     		case R.id.menu_listar_categoria_cadastrar:
-    			intencao = new Intent(this, CadastrarCategoria.class);
+    			intencao = new Intent(this, RegisterCategory.class);
     			startActivity(intencao);
     			return true;
     	
@@ -174,20 +174,20 @@ public class ListarCategoria extends Activity
     
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-    	Categoria categoria;
+    	Category category;
     	
     	switch (item.getItemId()) {
     	
     	case R.id.context_menu_register:
-    			startActivity(new Intent(this, CadastrarCategoria.class));
+    			startActivity(new Intent(this, RegisterCategory.class));
     		break;
     	
     	case R.id.context_menu_delete:
-    			categoria = (Categoria) lista.get(posicao);
+    			category = (Category) lista.get(posicao);
     			msgError = this.getString(R.string.lbl_falha_exclusao_categoria);
     			msgSucess = this.getString(R.string.lbl_sucesso_exclusao_categoria);
     			
-    			if ( DAOC.delete(categoria.getId_categoria(), getApplicationContext()) == -1 ) {
+    			if ( DAOC.delete(category.getId_categoria(), getApplicationContext()) == -1 ) {
     				ToastManager.show(getApplicationContext(), msgError, 2);
     			}
     			else {
@@ -197,11 +197,11 @@ public class ListarCategoria extends Activity
     			
     			break;
     	case R.id.context_menu_update:
-    			categoria = (Categoria) lista.get(posicao);
-    			Intent intent = new Intent(getApplicationContext(), DetalhesCategoria.class);
+    			category = (Category) lista.get(posicao);
+    			Intent intent = new Intent(getApplicationContext(), DetailsCategory.class);
     			Bundle param = new Bundle();
     			
-    			param.putSerializable("_object_categoria", categoria);
+    			param.putSerializable("_object_categoria", category);
     			intent.putExtras(param);
     			startActivity(intent);    			
     			

@@ -34,9 +34,9 @@
         <activity android:name="alergias.activity.CadastrarAlergia"></activity>
         <activity android:name="alergias.activity.ListarAlergia"></activity>
         <activity android:name="alergias.activity.DetalhesAlergia"></activity>
-        <activity android:name="alergias.activity.CadastrarCategoria"></activity>
+        <activity android:name="alergias.activity.RegisterCategory"></activity>
         <activity android:name="alergias.activity.ListarCategoria"></activity>
-        <activity android:name="alergias.activity.DetalhesCategoria"></activity>
+        <activity android:name="alergias.activity.DetailsCategory"></activity>
         <activity android:name="alergias.activity.EnviarSugestao"></activity>
 		
 		<!-- ADMOB -->
@@ -44,7 +44,7 @@
     	<!-- ADMOB -->
     
     	<!--  BACKUP -->
-    	<meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIKbwQRtgmPDtHx7Qxu4VjrvN5MTew3cgPqP18jw" />
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIhTBbEM_7KAcQv63jeP4WsKLSXieWjRBLc3v_DQ" />
     </application>
 
 </manifest>

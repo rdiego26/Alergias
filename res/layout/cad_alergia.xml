@@ -34,7 +34,7 @@
 	<Button 
        android:text="@string/lbl_btn_cadastro"
        android:id="@+id/cad_alergia_btn_cadastrar"
-        android:onClick="cadastrar"
+        android:onClick="register"
        style="@style/botao"/>
 
 </LinearLayout>

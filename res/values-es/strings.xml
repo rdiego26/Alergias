@@ -18,29 +18,29 @@
 	<string name="place_holder_obs">Obs</string>
 	<!-- Cadastro de Alergia [FIM]-->
    
-    <!--  Cadastro de Categoria [INICIO]-->
+    <!--  Cadastro de Category [INICIO]-->
     <string name="lbl_nome_categoria">CATEGORÍA</string>
     <string name="place_holder_nome_categoria">Categoría</string>
-    <!--  Cadastro de Categoria [FIM]-->   
+    <!--  Cadastro de Category [FIM]-->
       
 	<!--  Menu da tela principal [INICIO]-->      
 	<string name="lbl_menu_lstcategoria">Categorías</string>
 	<string name="lbl_menunome_lstalergia">Las alergias</string>
 	<!--  Menu da tela principal [FIM]-->
       
-   <!--  Menu da tela Listar Alergias e Categoria [INICIO] -->
+   <!--  Menu da tela Listar Alergias e Category [INICIO] -->
    <string name="lbl_menu_cad_cadastrar">Registrar</string>
    <string name="lbl_cabecalho_lst_alergia">Lista de los alérgicos</string>   
    <string name="lbl_cabecalho_lst_categoria">Lista de Categorías</string>
    <string name="lbl_cabecalho_lst_vazia_alergia">No alergias registrados! \nUse el botón de menú para las opciones!</string>
    <string name="lbl_cabecalho_lst_vazia_categoria">No hay una categoría registrada! \nUse el botón de menú para las opciones!</string>      
-   <!--  Menu da tela Listar Alergias e Categoria [FIM] -->
+   <!--  Menu da tela Listar Alergias e Category [FIM] -->
 
-   <!--  Menu da tela Detalhes Alergias e Categoria [INICIO] -->
+   <!--  Menu da tela Detalhes Alergias e Category [INICIO] -->
    <string name="lbl_menu_alterar">Cambiar</string>	
    <string name="lbl_menu_voltar">Volver</string>
    <string name="lbl_menu_excluir">Borrar</string>
-   <!--  Menu da tela Detalhes Alergias e Categoria [FIM] -->   
+   <!--  Menu da tela Detalhes Alergias e Category [FIM] -->
    
    <!--  ERROS E SUCESSO [INICIO]-->
    <string name="lbl_erro_duplicidade_alergia">Alergia ya existe!</string>
@@ -64,10 +64,10 @@
    <string name="lbl_falha_abertura_market">No se puede abrir Google Play, instalar la aplicación desde Google Play y vuelva a intentarlo.</string>
    <!--  ERROS [FIM]-->
    
-   <!-- Utils [INICIO] -->   
+   <!-- util [INICIO] -->
    <string name="lbl_campo">Campo</string>
    <string name="lbl_obrigatorio">se requiere</string>
-   <!-- Utils [FIM] -->
+   <!-- util [FIM] -->
     
    <!-- Enviar Sugestão [INICIO] -->
    <string name="lbl_sugestao">Sugerencias</string>

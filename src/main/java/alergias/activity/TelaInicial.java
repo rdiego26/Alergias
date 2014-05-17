@@ -1,7 +1,7 @@
 package alergias.activity;
 
 import info.diegoramos.alergiass.R;
-import alergias.Utils.ToastManager;
+import alergias.util.ToastManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;

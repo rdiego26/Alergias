@@ -1,11 +1,11 @@
 package alergias.activity;
 
+import alergias.persistence.DAOCategory;
+import alergias.util.Validation;
 import info.diegoramos.alergiass.R;
-import alergias.Utils.ToastManager;
-import alergias.Utils.validacoes;
+import alergias.util.ToastManager;
 import alergias.entity.Alergia;
 import alergias.persistence.DAOAlergia;
-import alergias.persistence.DAOCategoria;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -27,7 +26,7 @@ public class CadastrarAlergia extends Activity
 {
 
 	DAOAlergia DAOA;
-	DAOCategoria DAOC;
+	DAOCategory DAOC;
 	Alergia A;
 	
 	//Utilizados para trabalhar com o Spinner
@@ -47,7 +46,7 @@ public class CadastrarAlergia extends Activity
 
         //Trabalhando com Singleton
         DAOA = DAOAlergia.getInstance(this);
-        DAOC = DAOCategoria.getInstance(this);
+        DAOC = DAOCategory.getInstance(this);
 
 
         //Preenchendo o Spinner
@@ -73,7 +72,7 @@ public class CadastrarAlergia extends Activity
         A.setId_categoria(id_categoria_tela);
 
         //Valida��o dos campos
-        validacoes validate = new validacoes();
+        Validation validate = new Validation();
         boolean aux1;
 
         aux1 = validate.isNull("Alergia ", A.getNome(), 1, getApplicationContext());

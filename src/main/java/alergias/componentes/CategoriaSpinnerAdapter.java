@@ -1,8 +1,8 @@
 package alergias.componentes;
 
 import info.diegoramos.alergiass.R;
-import alergias.entity.Categoria;
-import alergias.persistence.DAOCategoria;
+import alergias.entity.Category;
+import alergias.persistence.DAOCategory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,8 +24,8 @@ public class CategoriaSpinnerAdapter {
 	 * @return SimpleAdapter, utilizado em um Spinner com setAdapter
 	 */
 	public static final SimpleAdapter getAdapter(Context ctx) {
-		DAOCategoria daoC = DAOCategoria.getInstance(ctx);
-		List<Categoria> list = daoC.findAll();
+		DAOCategory daoC = DAOCategory.getInstance(ctx);
+		List<Category> list = daoC.findAll();
 		
 		ArrayList<HashMap<String, String>> alist = new ArrayList<HashMap<String, String>>();
         HashMap<String, String> map = new HashMap<String, String>();

@@ -19,10 +19,10 @@
 	<string name="place_holder_obs">Note</string>
 	<!-- Cadastro de Alergia [FIM]-->
    
-   <!--  Cadastro de Categoria [INICIO]-->
+   <!--  Cadastro de Category [INICIO]-->
     <string name="lbl_nome_categoria">CATEGORY</string>
     <string name="place_holder_nome_categoria">Category</string>
-   <!--  Cadastro de Categoria [FIM]-->
+   <!--  Cadastro de Category [FIM]-->
       
 	<!--  Menu da tela principal [INICIO]-->      
 	<string name="lbl_menu_lstcategoria">Categories</string>
@@ -37,11 +37,11 @@
    <string name="lbl_cabecalho_lst_vazia_categoria">No category registered! \nUse the menu button for options!</string>   
    <!--  Menu da tela Listar Alergias [FIM] -->
     
-   <!--  Menu da tela Detalhes Alergias e Categoria [INICIO] -->
+   <!--  Menu da tela Detalhes Alergias e Category [INICIO] -->
    <string name="lbl_menu_alterar">Update</string>	
    <string name="lbl_menu_voltar">Back</string>
    <string name="lbl_menu_excluir">Delete</string>
-   <!--  Menu da tela Detalhes Alergias e Categoria [FIM] -->     
+   <!--  Menu da tela Detalhes Alergias e Category [FIM] -->
    
    <!--  ERROS E SUCESSO [INICIO]-->
    <string name="lbl_erro_duplicidade_alergia">Allergy already exists!</string>
@@ -65,10 +65,10 @@
    <string name="lbl_falha_abertura_market">Unable to open Google Play, install the app from Google Play and try again.</string>
    <!--  ERROS [FIM]-->   
    
-   <!-- Utils [INICIO] -->   
+   <!-- util [INICIO] -->
    <string name="lbl_campo">Field</string>
    <string name="lbl_obrigatorio"> is required!</string>
-   <!-- Utils [FIM] -->
+   <!-- util [FIM] -->
    
    <!-- Enviar Sugestão [INICIO] -->
    <string name="lbl_sugestao">Suggestions</string>

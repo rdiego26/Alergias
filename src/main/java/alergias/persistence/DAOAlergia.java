@@ -137,7 +137,7 @@ public class DAOAlergia {
 	}
 	
 	/**
-	 * Busca Alergias por Categoria
+	 * Busca Alergias por Category
 	 * @param idCategoria
 	 * @return List<Alergia>
 	 */

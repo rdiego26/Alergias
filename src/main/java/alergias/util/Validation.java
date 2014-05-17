@@ -12,20 +12,20 @@ import android.widget.Toast;
  * @author Diego Ramos <rdiego26@gmail>
  * 
  */
-public class Validacoes {
+public class Validation {
 
 	private String msg_campo;
 	private String msg_obrigatorio;
     private StringBuilder msg;
 	
-	public final boolean isNull(String nome_campo, Object objeto, int duracao, Context ctx)
-	{
-		if(objeto.toString().trim().equalsIgnoreCase("") || objeto.toString().trim().equalsIgnoreCase(null) || objeto.toString().trim().equals(null))
-		{
+	public final boolean isNull(String fieldName, Object object, int duracao, Context ctx) {
+
+		if(object.toString().trim().equalsIgnoreCase("") || object.toString().trim().equalsIgnoreCase(null) || object.toString().trim().equals(null)) {
+
             msg_campo = ctx.getString(R.string.lbl_campo);
             msg_obrigatorio = ctx.getString(R.string.lbl_obrigatorio);
             msg = new StringBuilder(msg_campo).append(" ")
-                    .append(nome_campo).append(" ")
+                    .append(fieldName).append(" ")
                     .append(msg_obrigatorio);
 
 
@@ -48,17 +48,17 @@ public class Validacoes {
 		}
 	}
 
-    public final boolean isNullWithAnimation(String nome_campo, Object objeto, View vw, Context ctx)
+    public final boolean isNullWithAnimation(String fieldName, Object object, View vw, Context ctx)
     {
 
-        if(objeto.toString().trim().equalsIgnoreCase("") || objeto.toString().trim().equalsIgnoreCase(null) || objeto.toString().trim().equals(null))
+        if(object.toString().trim().equalsIgnoreCase("") || object.toString().trim().equalsIgnoreCase(null) || object.toString().trim().equals(null))
         {
             Animation shake = AnimationUtils.loadAnimation(ctx, R.anim.shake);
 
             msg_campo = ctx.getString(R.string.lbl_campo);
             msg_obrigatorio = ctx.getString(R.string.lbl_obrigatorio);
             msg = new StringBuilder(msg_campo).append(" ")
-                    .append(nome_campo).append(" ")
+                    .append(fieldName).append(" ")
                     .append(msg_obrigatorio);
 
 
