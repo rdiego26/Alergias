@@ -75,7 +75,7 @@
    <string name="lbl_btn_sugestao">Enviar Sugestão</string>
    <!-- Enviar Sugestão [FIM] -->
    
-   <string name="ADMOB_PUBLISHER_ID">a14f902a49ada86</string>
+   <string name="ADMOB_PUBLISHER_ID">ca-app-pub-5968634501240875/6505346038</string>
    
    <!-- DASHBOARD -->
 	<string name="dashboard_txtSugestao">Sugestões</string>
